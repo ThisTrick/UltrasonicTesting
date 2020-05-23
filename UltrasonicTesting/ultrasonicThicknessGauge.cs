@@ -23,13 +23,10 @@ namespace UltrasonicTesting
         public double[] Chart { get; private set; }
         private int _responseTimeInt;
         public IAcousticAttenuationСalculate AttenuationСalculate { get; private set; }
-        public UltrasonicThicknessGauge(PiezoelectricityConverter converter)
-        {
-            Converter = converter ?? throw new ArgumentNullException(nameof(converter));
-        }
-        public UltrasonicThicknessGauge(PiezoelectricityConverter converter, TestObject testObject) : this(converter)
+        public UltrasonicThicknessGauge(PiezoelectricityConverter converter, TestObject testObject)
         {
             ChangeTestObject(testObject);
+            Converter = converter ?? throw new ArgumentNullException(nameof(converter));
         }
         /// <summary>
         /// Изменение Объекта Контроля.
@@ -38,16 +35,16 @@ namespace UltrasonicTesting
         public void ChangeTestObject(TestObject newTestObject)
         {
             TestObject = newTestObject ?? throw new ArgumentNullException(nameof(newTestObject));
-            ResponseTime = ResponseTimeCalc();
-            _responseTimeInt = (int)Math.Round(ResponseTime * 1000000);
-            var samplesGraphics = _responseTimeInt + 1;
-            Chart = new double[samplesGraphics];
         }
         /// <summary>
         /// Запускает измерение толщины.
         /// </summary>
         public void StartTesting() 
         {
+            ResponseTime = ResponseTimeCalc();
+            _responseTimeInt = (int)Math.Round(ResponseTime * 1000000);
+            var samplesGraphics = _responseTimeInt + 1;
+            Chart = new double[samplesGraphics];
             AttenuationСalculate = ChoiceAcousticAttenuation();
             var responseAmplitude = ResponseAmplitude();
             InitChart(responseAmplitude);

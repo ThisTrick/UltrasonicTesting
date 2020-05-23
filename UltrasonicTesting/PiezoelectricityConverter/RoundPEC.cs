@@ -15,6 +15,10 @@ namespace UltrasonicTesting
         public override double FraunhoferDistance { get => 3*fresnelDistance; }
         public RoundPEC(double radius, Material material, AcousticWave acousticWave) : base(material, acousticWave)
         {
+            if (radius <= 0)
+            {
+                throw new ArgumentOutOfRangeException(nameof(radius), radius, "Должен быть больше нуля.");
+            }
             Radius = radius;
             fresnelDistance = Radius * Radius / AcousticWave.CalcWavelength(Material);
         }

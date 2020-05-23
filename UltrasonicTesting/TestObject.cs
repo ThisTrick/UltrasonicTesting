@@ -1,4 +1,6 @@
-﻿namespace UltrasonicTesting
+﻿using System;
+
+namespace UltrasonicTesting
 {
     /// <summary>
     /// Объект Контроля(ОК).
@@ -15,7 +17,11 @@
         public double Thickness { get; private set; }
         public TestObject(Material material, double thickness)
         {
-            Material = material ?? throw new System.ArgumentNullException(nameof(material));
+            Material = material ?? throw new ArgumentNullException(nameof(material));
+            if (thickness <= 0)
+            {
+                throw new ArgumentOutOfRangeException(nameof(thickness), thickness, "Должен быть больше нуля.");
+            }
             Thickness = thickness;
         }
     }

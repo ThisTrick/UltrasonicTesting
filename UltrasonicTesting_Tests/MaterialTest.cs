@@ -1,4 +1,5 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
+using System;
 using UltrasonicTesting;
 
 namespace UltrasonicTesting_Tests
@@ -24,5 +25,24 @@ namespace UltrasonicTesting_Tests
             // assert
             Assert.AreEqual(expected, actual, delta);
         }
+        [TestMethod]
+        [ExpectedException(typeof(ArgumentOutOfRangeException))]
+        public void ArgumentOutOfRangeExceptionSpeedOfSoundConstructor()
+        {
+            new Material(-1, 12, 12);
+        }
+        [TestMethod]
+        [ExpectedException(typeof(ArgumentOutOfRangeException))]
+        public void ArgumentOutOfRangeExceptionDensityConstructor()
+        {
+            new Material(10, 0, 12);
+        }
+        [TestMethod]
+        [ExpectedException(typeof(ArgumentOutOfRangeException))]
+        public void ArgumentOutOfRangeExceptionFsplConstructor()
+        {
+            new Material(10, 10, -1);
+        }
+
     }
 }

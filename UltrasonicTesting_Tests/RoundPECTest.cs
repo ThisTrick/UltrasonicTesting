@@ -1,5 +1,6 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 using UltrasonicTesting;
+using System;
 
 namespace UltrasonicTesting_Tests
 {
@@ -65,6 +66,24 @@ namespace UltrasonicTesting_Tests
             double actual = roundPEC.FraunhoferDistance;
             // assert
             Assert.AreEqual(expected, actual, delta);
+        }
+        [TestMethod]
+        [ExpectedException(typeof(ArgumentOutOfRangeException))]
+        public void ArgumentOutOfRangeExceptionRadiusConstructur()
+        {
+            new RoundPEC(-1, new Material(1, 1, 1), new AcousticWave(1, 1));
+        }
+        [TestMethod]
+        [ExpectedException(typeof(ArgumentNullException))]
+        public void ArgumentNullExceptionMaterialCtor()
+        {
+            new RoundPEC(1, null, new AcousticWave(1, 1));
+        }
+        [TestMethod]
+        [ExpectedException(typeof(ArgumentNullException))]
+        public void ArgumentNullExceptionAcousticWaveCtor()
+        {
+            new RoundPEC(1, new Material(1, 1, 1), null);
         }
     }
 }

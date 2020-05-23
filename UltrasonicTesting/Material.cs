@@ -1,4 +1,6 @@
-﻿namespace UltrasonicTesting
+﻿using System;
+
+namespace UltrasonicTesting
 {
     /// <summary>
     /// Класс описывающий физические свойства материалов.
@@ -23,6 +25,18 @@
         public double FSPL { get; set; }
         public Material(double speedOfSound, double density, double fspl)
         {
+            if (speedOfSound <= 0)
+            {
+                throw new ArgumentOutOfRangeException(nameof(speedOfSound), speedOfSound, "Должен быть больше нуля.");
+            }
+            if (density <= 0)
+            {
+                throw new ArgumentOutOfRangeException(nameof(density), density, "Должен быть больше нуля.");
+            }
+            if (fspl <= 0)
+            {
+                throw new ArgumentOutOfRangeException(nameof(fspl), fspl, "Должен быть больше нуля.");
+            }
             SpeedOfSound = speedOfSound;
             Density = density;
             FSPL = fspl;

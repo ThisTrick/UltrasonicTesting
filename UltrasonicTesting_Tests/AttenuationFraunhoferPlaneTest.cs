@@ -1,5 +1,6 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 using UltrasonicTesting;
+using System;
 
 namespace UltrasonicTesting_Tests
 {
@@ -44,7 +45,18 @@ namespace UltrasonicTesting_Tests
             // assert
             Assert.AreEqual(expected, actual, delta);
         }
-
+        [TestMethod]
+        [ExpectedException(typeof(ArgumentNullException))]
+        public void ArgumentNullExceptionPiezoelectricityConverterCtor()
+        {
+            new AttenuationFraunhoferPlane(null, new TestObject(new Material(1, 1, 1), 1));
+        }
+        [TestMethod]
+        [ExpectedException(typeof(ArgumentNullException))]
+        public void ArgumentNullExceptionTestObjectCtor()
+        {
+            new AttenuationFraunhoferPlane(new RoundPEC(1, new Material(1, 1, 1), new AcousticWave(1, 1)), null);
+        }
 
     }
 }

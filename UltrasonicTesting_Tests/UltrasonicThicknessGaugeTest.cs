@@ -7,9 +7,9 @@ namespace UltrasonicTesting_Tests
     [TestClass]
     public class UltrasonicThicknessGaugeTest
     {
-        public static UltrasonicThicknessGauge thicknessGauge;
-        [ClassInitialize]
-        public static void UltrasonicThicknessGaugeTestInialize(TestContext testContext)
+        public  UltrasonicThicknessGauge thicknessGauge;
+        [TestInitialize]
+        public void UltrasonicThicknessGaugeTestInialize()
         {
             // arrange
             double speedOfSound = 340;
@@ -93,7 +93,23 @@ namespace UltrasonicTesting_Tests
             // assert
             Assert.AreEqual(expected, actual, delta);
         }
-        // act
-        // assert
+        [TestMethod]
+        [ExpectedException(typeof(ArgumentNullException))]
+        public void ArgumentNullExceptionPiezoelectricityConverterCtor()
+        {
+            new UltrasonicThicknessGauge(null, new TestObject(new Material(1, 2, 1), 1));
+        }
+        [TestMethod]
+        [ExpectedException(typeof(ArgumentNullException))]
+        public void ArgumentNullExceptionTestObjectCtor()
+        {
+            new UltrasonicThicknessGauge(new RoundPEC(1, new Material(1, 1, 1), new AcousticWave(1, 1)), null);
+        }
+        [TestMethod]
+        [ExpectedException(typeof(ArgumentNullException))]
+        public void ArgumentNullExceptionTestObjectChangeTestObject()
+        {
+           thicknessGauge.ChangeTestObject(null);
+        }
     }
 }

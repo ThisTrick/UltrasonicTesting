@@ -37,7 +37,7 @@ namespace UltrasonicTestingForms
         private void ChartSetting()
         {
             Chart.Series.Clear();
-            Chart.ChartAreas[0].AxisX.Interval = 2;
+            Chart.ChartAreas[0].AxisX.Interval = 5;
             this.series = this.Chart.Series.Add("Result");
             series.IsVisibleInLegend = false;
             series.ChartType = SeriesChartType.Spline;

@@ -1,4 +1,5 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
+using System;
 using UltrasonicTesting;
 
 namespace UltrasonicTesting_Tests
@@ -61,6 +62,36 @@ namespace UltrasonicTesting_Tests
 
             //assert
             Assert.AreEqual(expected, actual);
+        }
+        [TestMethod]
+        [ExpectedException(typeof(ArgumentOutOfRangeException))]
+        public void ArgumentOutOfRangeExceptionAmplitudeConstructor()
+        {
+            new AcousticWave(-1, 15);
+        }
+        [TestMethod]
+        [ExpectedException(typeof(ArgumentOutOfRangeException))]
+        public void ArgumentOutOfRangeExceptionFrequencyConstructor()
+        {
+            new AcousticWave(15, 0);
+        }
+        [TestMethod]
+        [ExpectedException(typeof(ArgumentOutOfRangeException))]
+        public void ArgumentOutOfRangeExceptionNewFrequencyСhangeFrequency()
+        {
+            acousticWave.СhangeFrequency(-5);
+        }
+        [TestMethod]
+        [ExpectedException(typeof(ArgumentOutOfRangeException))]
+        public void ArgumentOutOfRangeExceptionNewAmplitudeСhangeAmplitude()
+        {
+            acousticWave.ChangeAmplitude(0);
+        }
+        [TestMethod]
+        [ExpectedException(typeof(ArgumentNullException))]
+        public void ArgumentNullExceptionMaterialCalcWavelength()
+        {
+            acousticWave.CalcWavelength(null);
         }
     }
 }
