@@ -41,9 +41,19 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AcousticAttenuation\AcousticAttenuation.cs" />
+    <Compile Include="AcousticAttenuation\FraunhoferZone\AttenuationFraunhoferPlane.cs" />
+    <Compile Include="AcousticAttenuation\IAcousticAttenuation.cs" />
     <Compile Include="AcousticWave.cs" />
     <Compile Include="Material.cs" />
+    <Compile Include="PiezoelectricityConverter\PiezoelectricityConverter.cs" />
+    <Compile Include="PiezoelectricityConverter\RoundPEC.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TestObject.cs" />
+    <Compile Include="UltrasonicThicknessGauge.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="AcousticAttenuation\FresnelZone\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

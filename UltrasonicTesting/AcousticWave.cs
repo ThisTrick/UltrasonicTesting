@@ -22,13 +22,25 @@
         /// <returns>Длину волны. Размерность [м].</returns>
         public double CalcWavelength(Material material)
         {
+            if (material is null)
+            {
+                throw new System.ArgumentNullException(nameof(material));
+            }
             double wavelength = material.SpeedOfSound / Frequency;
             return wavelength;
         }
+        /// <summary>
+        /// Изменение частоты.
+        /// </summary>
+        /// <param name="newFrequency">Новая частота.</param>
         public void СhangeFrequency(double newFrequency)
         {
             Frequency = newFrequency;
         }
+        /// <summary>
+        /// Изменение амплитуды.
+        /// </summary>
+        /// <param name="newAmplitude">Новая амплитуда.</param>
         public void ChangeAmplitude(double newAmplitude)
         {
             Amplitude = newAmplitude;

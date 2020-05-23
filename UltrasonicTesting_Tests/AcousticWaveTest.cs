@@ -6,7 +6,7 @@ namespace UltrasonicTesting_Tests
     [TestClass]
     public class AcousticWaveTest
     {
-        Material matetial;
+        Material material;
         AcousticWave acousticWave;
         [TestInitialize]
         public void AcousticWaveTestInialize()
@@ -14,7 +14,7 @@ namespace UltrasonicTesting_Tests
             double speedOfSound = 340;
             double density = 1.2;
             double fspl = 1.1;
-            matetial = new Material(speedOfSound, density, fspl);
+            material = new Material(speedOfSound, density, fspl);
 
             double amplitude = 15;
             double frequency = 4000;
@@ -29,7 +29,7 @@ namespace UltrasonicTesting_Tests
             // act
             double expected = 0.085;
             double delta = 0.00001; // погрешность 0.01%
-            double actual = acousticWave.CalcWavelength(matetial);
+            double actual = acousticWave.CalcWavelength(material);
 
             // assert
             Assert.AreEqual(expected, actual, delta);
