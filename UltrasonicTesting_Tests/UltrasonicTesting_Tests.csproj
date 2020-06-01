@@ -56,6 +56,7 @@
     <Compile Include="AttenuationFraunhoferPlaneTest.cs" />
     <Compile Include="UltrasonicThicknessGaugeTest.cs" />
     <Compile Include="TestObjectTest.cs" />
+    <Compile Include="AttenuationFresnelPlaneTest.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

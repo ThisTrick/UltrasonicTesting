@@ -14,9 +14,9 @@ namespace UltrasonicTestingForms.Controllers
             double.TryParse(Configuration.AppSettings.Settings[key].Value, out double value);
             return value;
         }
-        public void SetValue(string key, double value)
+        public void SetValue(string key, string value)
         {
-            Configuration.AppSettings.Settings[key].Value = value.ToString();
+            Configuration.AppSettings.Settings[key].Value = value;
             Configuration.Save();
             ConfigurationManager.RefreshSection("appSettings");
         }

@@ -1,15 +1,15 @@
-﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
-using System;
+﻿using System;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
+using UltrasonicTesting;
 using UltrasonicTesting.Models;
 using UltrasonicTesting.Attenuation;
-using UltrasonicTesting;
 
 namespace UltrasonicTesting_Tests
 {
     [TestClass]
-    public class AttenuationFraunhoferPlaneTest
+    public class AttenuationFresnelPlaneTest
     {
-        AttenuationFraunhoferPlane attenuation;
+        AttenuationFresnelPlane attenuation;
         [TestInitialize]
         public void AttenuationFraunhoferPlaneTestInitialize()
         {
@@ -33,15 +33,15 @@ namespace UltrasonicTesting_Tests
 
             TestObject testObject = new TestObject(materialTO, 0.2);
 
-            attenuation = new AttenuationFraunhoferPlane(roundPEC, testObject);
+            attenuation = new AttenuationFresnelPlane(roundPEC, testObject);
 
         }
         [TestMethod]
         public void СalculateTest()
         {
-            
+
             // act ///0,000986
-            double expected = 0.000986;
+            double expected = 0.188438;
             double delta = 0.00001; // погрешность 0.01%
             double actual = attenuation.Сalculate();
             // assert
@@ -51,14 +51,13 @@ namespace UltrasonicTesting_Tests
         [ExpectedException(typeof(ArgumentNullException))]
         public void ArgumentNullExceptionPiezoelectricityConverterCtor()
         {
-            new AttenuationFraunhoferPlane(null, new TestObject(new Material(1, 1, 1), 1));
+            new AttenuationFresnelPlane(null, new TestObject(new Material(1, 1, 1), 1));
         }
         [TestMethod]
         [ExpectedException(typeof(ArgumentNullException))]
         public void ArgumentNullExceptionTestObjectCtor()
         {
-            new AttenuationFraunhoferPlane(new RoundPEC(1, new Material(1, 1, 1), new AcousticWave(1, 1)), null);
+            new AttenuationFresnelPlane(new RoundPEC(1, new Material(1, 1, 1), new AcousticWave(1, 1)), null);
         }
-
     }
 }

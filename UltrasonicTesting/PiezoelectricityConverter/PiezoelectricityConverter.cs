@@ -1,4 +1,6 @@
-﻿namespace UltrasonicTesting
+﻿using UltrasonicTesting.Models;
+
+namespace UltrasonicTesting
 {
     /// <summary>
     /// Пьезоэлектрический Преобразователь(ПЕП).

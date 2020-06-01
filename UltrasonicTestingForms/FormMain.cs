@@ -28,7 +28,7 @@ namespace UltrasonicTestingForms
             {
                 if (selectedButton != null)
                 {
-                    selectedButton.BackColor = Color.FromArgb(8, 73, 108);
+                    selectedButton.BackColor = Color.FromArgb(51, 51, 76);
                 }
                 clickedButtun.BackColor = Color.FromArgb(30, 150, 195);
                 selectedButton = clickedButtun;
@@ -58,22 +58,22 @@ namespace UltrasonicTestingForms
         }
         private void btnParams_Click(object sender, EventArgs e)
         {
-            OpenChildForm(new FormParams(), sender);
+            OpenChildForm(new Forms.FormParams(), sender);
         }
 
         private void btnResult_Click(object sender, EventArgs e)
         {
-            OpenChildForm(new FormResult(), sender);
+            OpenChildForm(new Forms.FormResult(), sender);
         }
 
         private void btnAddMaterial_Click(object sender, EventArgs e)
         {
-            OpenChildForm(new FormAddMaterial(), sender);
+            OpenChildForm(new Forms.FormAddMaterial(), sender);
         }
 
         private void btnInfo_Click(object sender, EventArgs e)
         {
-            OpenChildForm(new FormInfo(), sender);
+            OpenChildForm(new Forms.FormInfo(), sender);
         }
     }
 }

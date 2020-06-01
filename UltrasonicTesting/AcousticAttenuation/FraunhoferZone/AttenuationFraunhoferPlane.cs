@@ -1,8 +1,9 @@
 ﻿using System;
+using UltrasonicTesting.Models;
 
-namespace UltrasonicTesting
+namespace UltrasonicTesting.Attenuation
 {
-    public class AttenuationFraunhoferPlane : AcousticAttenuation, IAcousticAttenuationСalculate
+    public sealed class AttenuationFraunhoferPlane : AcousticAttenuation, IAcousticAttenuationСalculate
     {
         public double Сalculate()
         {

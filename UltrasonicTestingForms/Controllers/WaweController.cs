@@ -12,8 +12,12 @@ namespace UltrasonicTestingForms.Controllers
         private int direction;
         public WaweController(PictureBox pictureWave, Panel panel, int samples)
         {
-            this.pictureWave = pictureWave;
-            this.panel = panel;
+            this.pictureWave = pictureWave ?? throw new ArgumentNullException(nameof(pictureWave));
+            this.panel = panel ?? throw new ArgumentNullException(nameof(panel));
+            if (samples <= 0)
+            {
+                throw new ArgumentOutOfRangeException(nameof(samples), samples, "Должен быть больше нуля.");
+            }
             this.samples = samples;
             this.pictureWave.Location = new Point(125, 6);
             this.pictureWave.Image = Properties.Resources.waveBottom;
@@ -31,7 +35,7 @@ namespace UltrasonicTestingForms.Controllers
                 pictureWave.Visible = false;
                 return;
             }
-            int size = (panel.Height - pictureWave.Size.Height - 150);
+            int size = (panel.Height - pictureWave.Size.Height);
             int stepMove = 2 * size / samples;
             if (size <= pictureWave.Location.Y)
             {

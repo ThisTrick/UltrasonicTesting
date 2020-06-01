@@ -13,7 +13,7 @@ D:\GitHub\UltrasonicTesting\UltrasonicTestingForms\obj\Debug\UltrasonicTestingFo
 D:\GitHub\UltrasonicTesting\UltrasonicTestingForms\bin\Debug\ru\UltrasonicTestingForms.resources.dll
 D:\GitHub\UltrasonicTesting\UltrasonicTestingForms\obj\Debug\UltrasonicTestingForms.FormMain.ru.resources
 D:\GitHub\UltrasonicTesting\UltrasonicTestingForms\obj\Debug\ru\UltrasonicTestingForms.resources.dll
-D:\GitHub\UltrasonicTesting\UltrasonicTestingForms\obj\Debug\UltrasonicTestingForms.FormResult.resources
-D:\GitHub\UltrasonicTesting\UltrasonicTestingForms\obj\Debug\UltrasonicTestingForms.FormParams.resources
-D:\GitHub\UltrasonicTesting\UltrasonicTestingForms\obj\Debug\UltrasonicTestingForms.FormAddMaterial.resources
-D:\GitHub\UltrasonicTesting\UltrasonicTestingForms\obj\Debug\UltrasonicTestingForms.FormInfo.resources
+D:\GitHub\UltrasonicTesting\UltrasonicTestingForms\obj\Debug\UltrasonicTestingForms.Forms.FormAddMaterial.resources
+D:\GitHub\UltrasonicTesting\UltrasonicTestingForms\obj\Debug\UltrasonicTestingForms.Forms.FormInfo.resources
+D:\GitHub\UltrasonicTesting\UltrasonicTestingForms\obj\Debug\UltrasonicTestingForms.Forms.FormParams.resources
+D:\GitHub\UltrasonicTesting\UltrasonicTestingForms\obj\Debug\UltrasonicTestingForms.Forms.FormResult.resources

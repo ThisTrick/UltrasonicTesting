@@ -1,17 +1,11 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Windows.Forms.DataVisualization.Charting;
 using UltrasonicTesting;
+using UltrasonicTesting.Models;
 using UltrasonicTestingForms.Controllers;
 
-namespace UltrasonicTestingForms
+namespace UltrasonicTestingForms.Forms
 {
     public partial class FormResult : Form
     {
@@ -23,16 +17,23 @@ namespace UltrasonicTestingForms
         public FormResult()
         {
             InitializeComponent();
-            ThicknessGaugeInit(new AppConfigController());
             ChartSetting();
         }
 
         private void btnStart_Click(object sender, EventArgs e)
         {
-            index = 0;
-            waweController = new WaweController(pictureWave, ModelPanel, thicknessGauge.Chart.Length);
-            timerAction.Start();
-            ChartSetting();
+            try
+            {
+                ThicknessGaugeInit(new AppConfigController());
+                index = 0;
+                waweController = new WaweController(pictureWave, TestObjeckPanel, thicknessGauge.Chart.Length);
+                ChartSetting();
+                timerAction.Start();
+            }
+            catch (ArithmeticException ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
         private void ChartSetting()
         {
@@ -65,7 +66,7 @@ namespace UltrasonicTestingForms
 
         private void timerAction_Tick(object sender, EventArgs e)
         {
-            if (thicknessGauge.Chart.Length > index) 
+            if (thicknessGauge.Chart.Length > index)
             {
                 series.Points.Add(thicknessGauge.Chart[index]);
             }

@@ -1,6 +1,7 @@
 ﻿using System;
+using UltrasonicTesting.Models;
 
-namespace UltrasonicTesting
+namespace UltrasonicTesting.Attenuation
 {
     /// <summary>
     /// Коэффициент затухания акустического тракта.

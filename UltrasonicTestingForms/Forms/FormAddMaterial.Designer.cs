@@ -1,4 +1,4 @@
-﻿namespace UltrasonicTestingForms
+﻿namespace UltrasonicTestingForms.Forms
 {
     partial class FormAddMaterial
     {

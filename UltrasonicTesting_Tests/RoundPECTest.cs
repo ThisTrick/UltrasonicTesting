@@ -1,6 +1,7 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
-using UltrasonicTesting;
 using System;
+using UltrasonicTesting;
+using UltrasonicTesting.Models;
 
 namespace UltrasonicTesting_Tests
 {

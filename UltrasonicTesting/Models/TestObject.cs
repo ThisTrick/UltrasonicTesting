@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace UltrasonicTesting
+namespace UltrasonicTesting.Models
 {
     /// <summary>
     /// Объект Контроля(ОК).

@@ -1,4 +1,6 @@
 ﻿using System;
+using UltrasonicTesting.Attenuation;
+using UltrasonicTesting.Models;
 
 namespace UltrasonicTesting
 {
@@ -62,7 +64,7 @@ namespace UltrasonicTesting
             var fraunhoferDistance = Converter.FraunhoferDistance;
             if(thickness <= fresnelDistance)
             {
-                throw new ArithmeticException("Для ближней зоны еще нет реализации");
+                acousticAttenuation = new AttenuationFresnelPlane(Converter, TestObject);
             }
             else if(thickness >= fraunhoferDistance)
             {
@@ -70,7 +72,7 @@ namespace UltrasonicTesting
             }
             else
             {
-                throw new ArithmeticException("Для переходной зоны еще нет реализации");
+                throw new ArithmeticException("Контроль в переходной зоне не возможен. Измените входные параметры.");
             }
             return acousticAttenuation;
         }

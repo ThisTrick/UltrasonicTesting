@@ -37,8 +37,8 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.MenuTitle = new System.Windows.Forms.Label();
             this.MainPanel = new System.Windows.Forms.Panel();
-            this.TitlePanel = new System.Windows.Forms.Panel();
             this.DesktopPanel = new System.Windows.Forms.Panel();
+            this.TitlePanel = new System.Windows.Forms.Panel();
             this.TitleLabel = new System.Windows.Forms.Label();
             this.panelMenu.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -48,7 +48,7 @@
             // 
             // panelMenu
             // 
-            this.panelMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(73)))), ((int)(((byte)(108)))));
+            this.panelMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(76)))));
             this.panelMenu.Controls.Add(this.btnInfo);
             this.panelMenu.Controls.Add(this.btnAddMaterial);
             this.panelMenu.Controls.Add(this.btnResult);
@@ -99,7 +99,7 @@
             // 
             // panel1
             // 
-            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(46)))), ((int)(((byte)(83)))));
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(39)))), ((int)(((byte)(58)))));
             this.panel1.Controls.Add(this.MenuTitle);
             resources.ApplyResources(this.panel1, "panel1");
             this.panel1.Name = "panel1";
@@ -117,17 +117,17 @@
             resources.ApplyResources(this.MainPanel, "MainPanel");
             this.MainPanel.Name = "MainPanel";
             // 
+            // DesktopPanel
+            // 
+            resources.ApplyResources(this.DesktopPanel, "DesktopPanel");
+            this.DesktopPanel.Name = "DesktopPanel";
+            // 
             // TitlePanel
             // 
             this.TitlePanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(150)))), ((int)(((byte)(136)))));
             this.TitlePanel.Controls.Add(this.TitleLabel);
             resources.ApplyResources(this.TitlePanel, "TitlePanel");
             this.TitlePanel.Name = "TitlePanel";
-            // 
-            // DesktopPanel
-            // 
-            resources.ApplyResources(this.DesktopPanel, "DesktopPanel");
-            this.DesktopPanel.Name = "DesktopPanel";
             // 
             // TitleLabel
             // 

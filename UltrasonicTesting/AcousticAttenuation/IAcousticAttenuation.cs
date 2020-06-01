@@ -1,4 +1,4 @@
-﻿namespace UltrasonicTesting
+﻿namespace UltrasonicTesting.Attenuation
 {
     public interface IAcousticAttenuationСalculate
     {
