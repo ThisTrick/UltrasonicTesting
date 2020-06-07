@@ -54,6 +54,7 @@
   <ItemGroup>
     <Compile Include="Controllers\AppConfigController.cs" />
     <Compile Include="Controllers\WaweController.cs" />
+    <Compile Include="Controllers\XMLMaterialsController.cs" />
     <Compile Include="FormMain.cs">
       <SubType>Form</SubType>
     </Compile>

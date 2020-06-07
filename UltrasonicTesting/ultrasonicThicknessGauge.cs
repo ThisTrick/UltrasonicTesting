@@ -78,31 +78,16 @@ namespace UltrasonicTesting
         }
         private double ResponseAmplitude()
         {
-            double result = AttenuationСalculate.Сalculate() * Converter.AcousticWave.Amplitude * 1;
-            return result;
+            return AttenuationСalculate.Сalculate() * Converter.AcousticWave.Amplitude * 1;
         }
         private double ResponseTimeCalc()
         {
-            double result = 2 * TestObject.Thickness / TestObject.Material.SpeedOfSound;
-            return result;
+            return 2 * TestObject.Thickness / TestObject.Material.SpeedOfSound;
         }
         private void InitChart(double responseAmplitude)
         {
-            for (int t = 0; t < Chart.Length; t++)
-            {
-                if(t != _responseTimeInt)
-                {
-                    Chart[t] = 0;
-                }
-                else if (t == _responseTimeInt)
-                {
-                    Chart[t] = responseAmplitude;
-                }
-                else
-                {
-                    throw new ApplicationException();
-                }
-            }
+                Chart.Initialize();
+                Chart[Chart.Length - 1] = responseAmplitude;
         }
     }
 }

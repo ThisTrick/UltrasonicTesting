@@ -9,10 +9,14 @@ namespace UltrasonicTestingForms.Controllers
         {
             Configuration = ConfigurationManager.OpenExeConfiguration(ConfigurationUserLevel.None);
         }
-        public double GetValue(string key)
+        public double GetDoubleValue(string key)
         {
             double.TryParse(Configuration.AppSettings.Settings[key].Value, out double value);
             return value;
+        }
+        public string GetStrValue(string key)
+        {
+            return Configuration.AppSettings.Settings[key].Value;
         }
         public void SetValue(string key, string value)
         {

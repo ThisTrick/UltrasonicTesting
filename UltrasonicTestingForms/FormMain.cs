@@ -68,7 +68,7 @@ namespace UltrasonicTestingForms
 
         private void btnAddMaterial_Click(object sender, EventArgs e)
         {
-            OpenChildForm(new Forms.FormAddMaterial(), sender);
+            
         }
 
         private void btnInfo_Click(object sender, EventArgs e)

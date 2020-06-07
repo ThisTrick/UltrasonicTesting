@@ -12,9 +12,16 @@ namespace UltrasonicTestingForms.Forms
         {
             InitializeComponent();
             configController = new AppConfigController();
+            XMLMaterialsController materialsController = new XMLMaterialsController();
+            var names = materialsController.GetNameMaterials();
+            cmbMaterialPEC.Items.Clear();
+            cmbMaterialTO.Items.Clear();
+            cmbMaterialPEC.Items.AddRange(names);
+            cmbMaterialTO.Items.AddRange(names);
         }
         private void btnPush_Click(object sender, EventArgs e)
         {
+            errorProvider.Clear();
             string message = "Пожалуйста, заполните поле!";
             if (string.IsNullOrEmpty(txtAmplitude.Text))
             {
@@ -36,11 +43,23 @@ namespace UltrasonicTestingForms.Forms
                 errorProvider.SetError(txtThickness, message);
                 return;
             }
+            if (cmbMaterialTO.SelectedItem is null)
+            {
+                errorProvider.SetError(cmbMaterialTO, message);
+                return;
+            }
+            if (cmbMaterialPEC.SelectedItem is null)
+            {
+                errorProvider.SetError(cmbMaterialPEC, message);
+                return;
+            }
             configController.SetValue("amplitude", txtAmplitude.Text);
             configController.SetValue("frequency", txtFrequency.Text);
             configController.SetValue("radiusPEC", txtRadius.Text);
             configController.SetValue("thicknessTO", txtThickness.Text);
-
+            configController.SetValue("materialTO", cmbMaterialTO.SelectedItem as string);
+            configController.SetValue("materialPEC", cmbMaterialPEC.SelectedItem as string);
+            MessageBox.Show("Данные записаны");
         }
 
         private void ValidatingDouble(object sender, CancelEventArgs e)
@@ -59,6 +78,15 @@ namespace UltrasonicTestingForms.Forms
                 errorProvider.SetError(textBox, "Пожалуйста, введите число  больше нуля!");
                 return;
             }
+        }
+
+        private void bAddMaterial_Click(object sender, EventArgs e)
+        {
+            Form formAddMaterial = new FormAddMaterial();
+            formAddMaterial.ShowDialog();
+            var nameMaterial = formAddMaterial.Text;
+            cmbMaterialPEC.Items.Add(nameMaterial);
+            cmbMaterialTO.Items.Add(nameMaterial);
         }
     }
 }

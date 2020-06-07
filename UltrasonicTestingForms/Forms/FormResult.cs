@@ -24,7 +24,7 @@ namespace UltrasonicTestingForms.Forms
         {
             try
             {
-                ThicknessGaugeInit(new AppConfigController());
+                ThicknessGaugeInit(new AppConfigController(), new XMLMaterialsController());
                 index = 0;
                 waweController = new WaweController(pictureWave, TestObjeckPanel, thicknessGauge.Chart.Length);
                 ChartSetting();
@@ -43,22 +43,21 @@ namespace UltrasonicTestingForms.Forms
             series.IsVisibleInLegend = false;
             series.ChartType = SeriesChartType.Spline;
         }
-        private void ThicknessGaugeInit(AppConfigController configController)
+        private void ThicknessGaugeInit(AppConfigController configController, XMLMaterialsController materialsController)
         {
-            double speedOfSoundPEC = configController.GetValue("speedOfSoundPEC");
-            double desityPEC = configController.GetValue("desityPEC");
-            double fsplPEC = configController.GetValue("fsplPEC");
-            Material materialPEC = new Material(speedOfSoundPEC, desityPEC, fsplPEC);
-            double radiusPEC = configController.GetValue("radiusPEC");
-            double amplitude = configController.GetValue("amplitude");
-            double frequency = configController.GetValue("frequency");
+            string nameMaterialPEC = configController.GetStrValue("materialPEC");
+            Material materialPEC = materialsController.GetMaterial(nameMaterialPEC);
+
+            double radiusPEC = configController.GetDoubleValue("radiusPEC");
+            double amplitude = configController.GetDoubleValue("amplitude");
+            double frequency = configController.GetDoubleValue("frequency");
             AcousticWave acousticWave = new AcousticWave(amplitude, frequency);
             RoundPEC roundPEC = new RoundPEC(radiusPEC, materialPEC, acousticWave);
-            double speedOfSoundTO = configController.GetValue("speedOfSoundTO");
-            double desityTO = configController.GetValue("desityTO");
-            double fsplTO = configController.GetValue("fsplTO");
-            Material materialTO = new Material(speedOfSoundTO, desityTO, fsplTO);
-            double thicknessTO = configController.GetValue("thicknessTO");
+
+            string namematerialTO = configController.GetStrValue("materialTO");
+            Material materialTO = materialsController.GetMaterial(namematerialTO);
+
+            double thicknessTO = configController.GetDoubleValue("thicknessTO");
             TestObject testObject = new TestObject(materialTO, thicknessTO);
             this.thicknessGauge = new UltrasonicThicknessGauge(roundPEC, testObject);
             this.thicknessGauge.StartTesting();
@@ -70,12 +69,10 @@ namespace UltrasonicTestingForms.Forms
             {
                 series.Points.Add(thicknessGauge.Chart[index]);
             }
-            if (index <= thicknessGauge.Chart.Length + 9)
-            {
-                series.Points.Add(0);
-            }
             else
             {
+                series.Points.Add(0, 0, 0, 0, 0, 0, 0);
+                pictureWave.Visible = false;
                 timerAction.Stop();
                 return;
             }

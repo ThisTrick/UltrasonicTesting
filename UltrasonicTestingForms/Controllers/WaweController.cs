@@ -26,17 +26,8 @@ namespace UltrasonicTestingForms.Controllers
         }
         public void Move()
         {
-            if (!pictureWave.Visible)
-            {
-                return;
-            }
-            if (pictureWave.Location.Y < 0)
-            {
-                pictureWave.Visible = false;
-                return;
-            }
             int size = (panel.Height - pictureWave.Size.Height);
-            int stepMove = 2 * size / samples;
+            int stepMove = 2 * size / samples + 2;
             if (size <= pictureWave.Location.Y)
             {
                 this.direction = -1;
@@ -45,6 +36,5 @@ namespace UltrasonicTestingForms.Controllers
             stepMove *= this.direction;
             pictureWave.Location = new Point(pictureWave.Location.X, pictureWave.Location.Y + stepMove);
         }
-
     }
 }

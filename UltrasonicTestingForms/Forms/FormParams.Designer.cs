@@ -43,6 +43,7 @@
             this.cmbMaterialPEC = new System.Windows.Forms.ComboBox();
             this.btnPush = new System.Windows.Forms.Button();
             this.errorProvider = new System.Windows.Forms.ErrorProvider(this.components);
+            this.bAddMaterial = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider)).BeginInit();
             this.SuspendLayout();
             // 
@@ -148,6 +149,14 @@
             this.cmbMaterialTO.Font = new System.Drawing.Font("Nirmala UI", 16.2F);
             this.cmbMaterialTO.ForeColor = System.Drawing.Color.Black;
             this.cmbMaterialTO.FormattingEnabled = true;
+            this.cmbMaterialTO.Items.AddRange(new object[] {
+            "Aluminum",
+            "Iron",
+            "Magnesium",
+            "Copper",
+            "Iron",
+            "CastIron",
+            "ЦТС-19"});
             this.cmbMaterialTO.Location = new System.Drawing.Point(372, 254);
             this.cmbMaterialTO.Name = "cmbMaterialTO";
             this.cmbMaterialTO.RightToLeft = System.Windows.Forms.RightToLeft.No;
@@ -182,6 +191,14 @@
             this.cmbMaterialPEC.Font = new System.Drawing.Font("Nirmala UI", 16.2F);
             this.cmbMaterialPEC.ForeColor = System.Drawing.Color.Black;
             this.cmbMaterialPEC.FormattingEnabled = true;
+            this.cmbMaterialPEC.Items.AddRange(new object[] {
+            "Aluminum",
+            "Iron",
+            "Magnesium",
+            "Copper",
+            "Iron",
+            "CastIron",
+            "ЦТС-19"});
             this.cmbMaterialPEC.Location = new System.Drawing.Point(372, 305);
             this.cmbMaterialPEC.Name = "cmbMaterialPEC";
             this.cmbMaterialPEC.RightToLeft = System.Windows.Forms.RightToLeft.No;
@@ -190,7 +207,7 @@
             // 
             // btnPush
             // 
-            this.btnPush.Location = new System.Drawing.Point(258, 408);
+            this.btnPush.Location = new System.Drawing.Point(96, 406);
             this.btnPush.Name = "btnPush";
             this.btnPush.Size = new System.Drawing.Size(150, 33);
             this.btnPush.TabIndex = 12;
@@ -202,12 +219,23 @@
             // 
             this.errorProvider.ContainerControl = this;
             // 
+            // bAddMaterial
+            // 
+            this.bAddMaterial.Location = new System.Drawing.Point(392, 395);
+            this.bAddMaterial.Name = "bAddMaterial";
+            this.bAddMaterial.Size = new System.Drawing.Size(177, 44);
+            this.bAddMaterial.TabIndex = 13;
+            this.bAddMaterial.Text = "AddMaterial";
+            this.bAddMaterial.UseVisualStyleBackColor = true;
+            this.bAddMaterial.Click += new System.EventHandler(this.bAddMaterial_Click);
+            // 
             // FormParams
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
             this.ClientSize = new System.Drawing.Size(690, 451);
+            this.Controls.Add(this.bAddMaterial);
             this.Controls.Add(this.btnPush);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.cmbMaterialPEC);
@@ -245,5 +273,6 @@
         private System.Windows.Forms.ComboBox cmbMaterialPEC;
         private System.Windows.Forms.Button btnPush;
         internal System.Windows.Forms.ErrorProvider errorProvider;
+        private System.Windows.Forms.Button bAddMaterial;
     }
 }
