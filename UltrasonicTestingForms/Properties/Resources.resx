@@ -117,6 +117,36 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="AcousticAttenuation" xml:space="preserve">
+    <value>#0019</value>
+  </data>
+  <data name="AcousticImpedancePEC" xml:space="preserve">
+    <value>#0008</value>
+  </data>
+  <data name="AcousticImpedanceTO" xml:space="preserve">
+    <value>#0013</value>
+  </data>
+  <data name="AreaPEC" xml:space="preserve">
+    <value>#0017</value>
+  </data>
+  <data name="DensityPEC" xml:space="preserve">
+    <value>#0007</value>
+  </data>
+  <data name="DensityTO" xml:space="preserve">
+    <value>#0011</value>
+  </data>
+  <data name="FraunhoferDistance" xml:space="preserve">
+    <value>#0016</value>
+  </data>
+  <data name="Frequency" xml:space="preserve">
+    <value>#0003</value>
+  </data>
+  <data name="FresnelDistance" xml:space="preserve">
+    <value>#0015</value>
+  </data>
+  <data name="FsplTO" xml:space="preserve">
+    <value>#0012</value>
+  </data>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="IconProject" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\IconProject.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -133,11 +163,41 @@
   <data name="icon_property_white" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\icon_property_white.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="InAmplitude" xml:space="preserve">
+    <value>#0020</value>
+  </data>
+  <data name="IntensityTransmittance" xml:space="preserve">
+    <value>#0018</value>
+  </data>
+  <data name="MaterialPEC" xml:space="preserve">
+    <value>#0005</value>
+  </data>
+  <data name="MaterialTO" xml:space="preserve">
+    <value>#0009</value>
+  </data>
   <data name="PEC" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\PEC.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="RadiusPEC" xml:space="preserve">
+    <value>#0001</value>
+  </data>
+  <data name="SpeedOfSoundPEC" xml:space="preserve">
+    <value>#0006</value>
+  </data>
+  <data name="SpeedOfSoundTO" xml:space="preserve">
+    <value>#0010</value>
+  </data>
+  <data name="ThicknessTO" xml:space="preserve">
+    <value>#0004</value>
+  </data>
+  <data name="WaveAmplitude" xml:space="preserve">
+    <value>#0002</value>
+  </data>
   <data name="waveBottom" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\waveBottom.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Wavelength" xml:space="preserve">
+    <value>#0014</value>
   </data>
   <data name="waveTop" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\waveTop.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>

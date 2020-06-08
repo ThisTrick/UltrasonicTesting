@@ -61,6 +61,96 @@ namespace UltrasonicTestingForms.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to #0019.
+        /// </summary>
+        internal static string AcousticAttenuation {
+            get {
+                return ResourceManager.GetString("AcousticAttenuation", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to #0008.
+        /// </summary>
+        internal static string AcousticImpedancePEC {
+            get {
+                return ResourceManager.GetString("AcousticImpedancePEC", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to #0013.
+        /// </summary>
+        internal static string AcousticImpedanceTO {
+            get {
+                return ResourceManager.GetString("AcousticImpedanceTO", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to #0017.
+        /// </summary>
+        internal static string AreaPEC {
+            get {
+                return ResourceManager.GetString("AreaPEC", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to #0007.
+        /// </summary>
+        internal static string DensityPEC {
+            get {
+                return ResourceManager.GetString("DensityPEC", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to #0011.
+        /// </summary>
+        internal static string DensityTO {
+            get {
+                return ResourceManager.GetString("DensityTO", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to #0016.
+        /// </summary>
+        internal static string FraunhoferDistance {
+            get {
+                return ResourceManager.GetString("FraunhoferDistance", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to #0003.
+        /// </summary>
+        internal static string Frequency {
+            get {
+                return ResourceManager.GetString("Frequency", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to #0015.
+        /// </summary>
+        internal static string FresnelDistance {
+            get {
+                return ResourceManager.GetString("FresnelDistance", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to #0012.
+        /// </summary>
+        internal static string FsplTO {
+            get {
+                return ResourceManager.GetString("FsplTO", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
         internal static System.Drawing.Bitmap icon_calc_white {
@@ -111,6 +201,42 @@ namespace UltrasonicTestingForms.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to #0020.
+        /// </summary>
+        internal static string InAmplitude {
+            get {
+                return ResourceManager.GetString("InAmplitude", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to #0018.
+        /// </summary>
+        internal static string IntensityTransmittance {
+            get {
+                return ResourceManager.GetString("IntensityTransmittance", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to #0005.
+        /// </summary>
+        internal static string MaterialPEC {
+            get {
+                return ResourceManager.GetString("MaterialPEC", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to #0009.
+        /// </summary>
+        internal static string MaterialTO {
+            get {
+                return ResourceManager.GetString("MaterialTO", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
         internal static System.Drawing.Bitmap PEC {
@@ -121,12 +247,66 @@ namespace UltrasonicTestingForms.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to #0001.
+        /// </summary>
+        internal static string RadiusPEC {
+            get {
+                return ResourceManager.GetString("RadiusPEC", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to #0006.
+        /// </summary>
+        internal static string SpeedOfSoundPEC {
+            get {
+                return ResourceManager.GetString("SpeedOfSoundPEC", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to #0010.
+        /// </summary>
+        internal static string SpeedOfSoundTO {
+            get {
+                return ResourceManager.GetString("SpeedOfSoundTO", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to #0004.
+        /// </summary>
+        internal static string ThicknessTO {
+            get {
+                return ResourceManager.GetString("ThicknessTO", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to #0002.
+        /// </summary>
+        internal static string WaveAmplitude {
+            get {
+                return ResourceManager.GetString("WaveAmplitude", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
         internal static System.Drawing.Bitmap waveBottom {
             get {
                 object obj = ResourceManager.GetObject("waveBottom", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to #0014.
+        /// </summary>
+        internal static string Wavelength {
+            get {
+                return ResourceManager.GetString("Wavelength", resourceCulture);
             }
         }
         

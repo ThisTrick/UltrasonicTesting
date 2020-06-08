@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Drawing;
+using System.Windows.Forms;
 using Word = Microsoft.Office.Interop.Word;
 
 namespace UltrasonicTestingForms.Controllers
@@ -13,18 +15,10 @@ namespace UltrasonicTestingForms.Controllers
         private Object Wrap;
         public MSWordController(string pathTemplate)
         {
-            Object pathObject = pathTemplate as Object;
-            Init(pathObject);
-        }
-        public MSWordController(object pathTemplate)
-        {
-            Init(pathTemplate);
-        }
-
-        private void Init(object pathTemplate)
-        {
             App = new Word.Application();
-            Docx = App.Application.Documents.Add(pathTemplate);
+            System.IO.FileInfo file = new System.IO.FileInfo(Application.ExecutablePath);
+            string absolutePath = System.IO.Path.Combine(file.Directory.FullName, pathTemplate);
+            Docx = App.Application.Documents.Add(absolutePath);
             Missing = Type.Missing;
             Find = App.Selection.Find;
             Wrap = Word.WdFindWrap.wdFindContinue;
@@ -49,6 +43,21 @@ namespace UltrasonicTestingForms.Controllers
                 Format: false,
                 ReplaceWith: Missing,
                 Replace: WdReplace);
+        }
+
+        public void AddImage(Bitmap img)
+        {
+            string pathImg = @"Images\tmp.png";
+            img.Save(pathImg);
+            System.IO.FileInfo file = new System.IO.FileInfo(Application.ExecutablePath);
+            string absolutePath = System.IO.Path.Combine(file.Directory.FullName, pathImg);
+            // Перемещение курсора в конец файла
+            Word.Range Range = Docx.Range(0, Docx.Content.End);
+            object dir = Word.WdCollapseDirection.wdCollapseEnd;
+            Range.Collapse(ref dir);
+            Range.Select();
+            // Вставка рисунка 
+            Docx.Application.Selection.InlineShapes.AddPicture(absolutePath);
         }
 
         #region IDisposable

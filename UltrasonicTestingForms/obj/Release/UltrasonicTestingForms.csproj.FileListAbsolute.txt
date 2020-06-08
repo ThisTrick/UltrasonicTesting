@@ -17,3 +17,4 @@ D:\GitHub\UltrasonicTesting\UltrasonicTestingForms\obj\Release\UltrasonicTesting
 D:\GitHub\UltrasonicTesting\UltrasonicTestingForms\obj\Release\UltrasonicTestingForms.Forms.FormInfo.resources
 D:\GitHub\UltrasonicTesting\UltrasonicTestingForms\obj\Release\UltrasonicTestingForms.Forms.FormParams.resources
 D:\GitHub\UltrasonicTesting\UltrasonicTestingForms\obj\Release\UltrasonicTestingForms.Forms.FormResult.resources
+D:\GitHub\UltrasonicTesting\UltrasonicTestingForms\obj\Release\UltrasonicTestingForms.csproj.ResolveComReference.cache

@@ -19,7 +19,7 @@ namespace UltrasonicTesting.Attenuation
         /// <summary>
         /// Коэффициент прохождения ультразвукового луча по интенсивности.
         /// </summary>
-        protected double IntensityTransmittance;
+        public double IntensityTransmittance { get; protected set; }
         protected AcousticAttenuation(PiezoelectricityConverter converter, TestObject testObject)
         {
             Converter = converter ?? throw new ArgumentNullException(nameof(converter));
