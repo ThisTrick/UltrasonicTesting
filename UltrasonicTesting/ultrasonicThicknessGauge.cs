@@ -24,6 +24,7 @@ namespace UltrasonicTesting
         public double ResponseTime { get; private set; }
         public double ResponseAmplitude { get; private set; }
         public double[] Chart { get; private set; }
+        public bool IsFresnelZone { get; private set; }
         private int _responseTimeInt;
         public AcousticAttenuation Attenuation { get; private set; }
         public UltrasonicThicknessGauge(PiezoelectricityConverter converter, TestObject testObject)
@@ -42,7 +43,7 @@ namespace UltrasonicTesting
         /// <summary>
         /// Запускает измерение толщины.
         /// </summary>
-        public void StartTesting() 
+        public void StartTesting()
         {
             ResponseTime = ResponseTimeCalc();
             _responseTimeInt = (int)Math.Round(ResponseTime * 1000000);
@@ -63,13 +64,15 @@ namespace UltrasonicTesting
             var thickness = TestObject.Thickness;
             var fresnelDistance = Converter.FresnelDistance;
             var fraunhoferDistance = Converter.FraunhoferDistance;
-            if(thickness <= fresnelDistance)
+            if (thickness <= fresnelDistance)
             {
                 acousticAttenuation = new AttenuationFresnelPlane(Converter, TestObject);
+                IsFresnelZone = true;
             }
-            else if(thickness >= fraunhoferDistance)
+            else if (thickness >= fraunhoferDistance)
             {
                 acousticAttenuation = new AttenuationFraunhoferPlane(Converter, TestObject);
+                IsFresnelZone = false;
             }
             else
             {
@@ -87,8 +90,8 @@ namespace UltrasonicTesting
         }
         private void InitChart(double ResponseAmplitude)
         {
-                Chart.Initialize();
-                Chart[Chart.Length - 1] = ResponseAmplitude;
+            Chart.Initialize();
+            Chart[Chart.Length - 1] = ResponseAmplitude;
         }
     }
 }

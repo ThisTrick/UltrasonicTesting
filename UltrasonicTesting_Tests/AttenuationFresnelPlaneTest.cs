@@ -1,15 +1,15 @@
-﻿using System;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
+﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
+using System;
 using UltrasonicTesting;
-using UltrasonicTesting.Models;
 using UltrasonicTesting.Attenuation;
+using UltrasonicTesting.Models;
 
 namespace UltrasonicTesting_Tests
 {
     [TestClass]
     public class AttenuationFresnelPlaneTest
     {
-        AttenuationFresnelPlane attenuation;
+        private AttenuationFresnelPlane attenuation;
         [TestInitialize]
         public void AttenuationFraunhoferPlaneTestInitialize()
         {

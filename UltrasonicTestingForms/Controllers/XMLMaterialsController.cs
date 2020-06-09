@@ -1,8 +1,7 @@
 ﻿using System;
+using System.Linq;
 using System.Xml.Linq;
 using UltrasonicTesting.Models;
-using System.Linq;
-using System.Collections.Generic;
 
 namespace UltrasonicTestingForms.Controllers
 {
@@ -53,7 +52,7 @@ namespace UltrasonicTestingForms.Controllers
                 throw new ArgumentException("Не может быть пустым", nameof(name));
             }
             var element = Root.Elements().Where(e => e.Attribute("Name").Value == name).First();
-            if(element is null)
+            if (element is null)
             {
                 throw new ArgumentException($"Материала под именем [{name}] нет.");
             }

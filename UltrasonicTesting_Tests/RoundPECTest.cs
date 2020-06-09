@@ -8,7 +8,7 @@ namespace UltrasonicTesting_Tests
     [TestClass]
     public class RoundPECTest
     {
-        static RoundPEC roundPEC;
+        private static RoundPEC roundPEC;
         [ClassInitialize]
         public static void RoundPECTestInitialize(TestContext testContext)
         {
@@ -31,7 +31,7 @@ namespace UltrasonicTesting_Tests
         public void ThicknessTest()
         {
             // act
-            double expected = 0.0425; 
+            double expected = 0.0425;
             double delta = 0.00001; // погрешность 0.01%
             double actual = roundPEC.Thickness;
             // assert
@@ -52,7 +52,7 @@ namespace UltrasonicTesting_Tests
         public void FresnelDistanceTest()
         {
             // act
-            double expected = 0.00470588; 
+            double expected = 0.00470588;
             double delta = 0.00001; // погрешность 0.01%
             double actual = roundPEC.FresnelDistance;
             // assert

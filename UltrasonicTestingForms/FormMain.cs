@@ -68,7 +68,7 @@ namespace UltrasonicTestingForms
 
         private void btnAddMaterial_Click(object sender, EventArgs e)
         {
-            
+
         }
 
         private void btnInfo_Click(object sender, EventArgs e)

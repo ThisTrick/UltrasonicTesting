@@ -1,15 +1,15 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
-using UltrasonicTesting.Models;
-using UltrasonicTesting.Attenuation;
 using UltrasonicTesting;
+using UltrasonicTesting.Attenuation;
+using UltrasonicTesting.Models;
 
 namespace UltrasonicTesting_Tests
 {
     [TestClass]
     public class AttenuationFraunhoferPlaneTest
     {
-        AttenuationFraunhoferPlane attenuation;
+        private AttenuationFraunhoferPlane attenuation;
         [TestInitialize]
         public void AttenuationFraunhoferPlaneTestInitialize()
         {
@@ -39,7 +39,7 @@ namespace UltrasonicTesting_Tests
         [TestMethod]
         public void СalculateTest()
         {
-            
+
             // act ///0,000986
             double expected = 0.000986;
             double delta = 0.00001; // погрешность 0.01%

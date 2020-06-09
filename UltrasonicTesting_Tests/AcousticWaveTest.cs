@@ -7,8 +7,8 @@ namespace UltrasonicTesting_Tests
     [TestClass]
     public class AcousticWaveTest
     {
-        Material material;
-        AcousticWave acousticWave;
+        private Material material;
+        private AcousticWave acousticWave;
         [TestInitialize]
         public void AcousticWaveTestInialize()
         {
@@ -26,7 +26,7 @@ namespace UltrasonicTesting_Tests
         public void CalcWavelengthTest()
         {
             // arrange
-           
+
             // act
             double expected = 0.085;
             double delta = 0.00001; // погрешность 0.01%

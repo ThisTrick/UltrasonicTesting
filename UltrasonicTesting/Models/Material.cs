@@ -18,7 +18,7 @@ namespace UltrasonicTesting.Models
         /// <summary>
         /// Удельное акустическое сопротивление упругой среды. Размерность [Па*с/м].
         /// </summary>
-        public double AcousticImpedance { get => SpeedOfSound*Density;}
+        public double AcousticImpedance { get => SpeedOfSound * Density; }
         /// <summary>
         /// Пространственный коэффициент затухания. Размерность [Нп/м].
         /// </summary>

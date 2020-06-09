@@ -1,5 +1,5 @@
-﻿using System;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
+﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
+using System;
 using UltrasonicTesting;
 using UltrasonicTesting.Models;
 
@@ -8,7 +8,7 @@ namespace UltrasonicTesting_Tests
     [TestClass]
     public class UltrasonicThicknessGaugeTest
     {
-        public  UltrasonicThicknessGauge thicknessGauge;
+        public UltrasonicThicknessGauge thicknessGauge;
         [TestInitialize]
         public void UltrasonicThicknessGaugeTestInialize()
         {
@@ -110,7 +110,7 @@ namespace UltrasonicTesting_Tests
         [ExpectedException(typeof(ArgumentNullException))]
         public void ArgumentNullExceptionTestObjectChangeTestObject()
         {
-           thicknessGauge.ChangeTestObject(null);
+            thicknessGauge.ChangeTestObject(null);
         }
     }
 }

@@ -15,10 +15,9 @@ namespace UltrasonicTestingForms.Forms
         private Series series;
         private int index;
         private WaweController waweController;
-        private string nameMaterialPEC, nameMaterialTO;
-        private string templatePath = @"Templates\ThicknessGaugeFraunhofer.docx";
-        MSWordController wordController;
-        Bitmap img;
+        private string nameMaterialPEC, nameMaterialTO, templatePath;
+        private MSWordController wordController;
+        private Bitmap img;
         public FormResult()
         {
             InitializeComponent();
@@ -64,6 +63,16 @@ namespace UltrasonicTestingForms.Forms
             double thicknessTO = configController.GetDoubleValue("thicknessTO");
             TestObject testObject = new TestObject(materialTO, thicknessTO);
             this.thicknessGauge = new UltrasonicThicknessGauge(roundPEC, testObject);
+
+            if (this.thicknessGauge.IsFresnelZone)
+            {
+                templatePath = @"Templates\ThicknessGaugeFresnel.docx";
+            }
+            else
+            {
+                templatePath = @"Templates\ThicknessGaugeFraunhofer.docx";
+            }
+
             this.thicknessGauge.StartTesting();
         }
         private void timerAction_Tick(object sender, EventArgs e)

@@ -12,6 +12,6 @@ namespace UltrasonicTesting.Attenuation
             double acousticAttenuation = Converter.Area / (2 * wavelengthTO * TestObject.Thickness) * IntensityTransmittance * 1 * exp;
             return acousticAttenuation;
         }
-        public AttenuationFraunhoferPlane(PiezoelectricityConverter converter, TestObject testObject) : base(converter, testObject){}
+        public AttenuationFraunhoferPlane(PiezoelectricityConverter converter, TestObject testObject) : base(converter, testObject) { }
     }
 }
