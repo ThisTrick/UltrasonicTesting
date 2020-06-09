@@ -5,6 +5,7 @@ using System.Windows.Forms.DataVisualization.Charting;
 using UltrasonicTesting;
 using UltrasonicTesting.Models;
 using UltrasonicTestingForms.Controllers;
+using UltrasonicTestingForms.Properties;
 
 namespace UltrasonicTestingForms.Forms
 {
@@ -14,13 +15,15 @@ namespace UltrasonicTestingForms.Forms
         private Series series;
         private int index;
         private WaweController waweController;
-
+        private string nameMaterialPEC, nameMaterialTO;
+        private string templatePath = @"Templates\ThicknessGaugeFraunhofer.docx";
+        MSWordController wordController;
+        Bitmap img;
         public FormResult()
         {
             InitializeComponent();
             ChartSetting();
         }
-
         private void btnStart_Click(object sender, EventArgs e)
         {
             try
@@ -46,7 +49,7 @@ namespace UltrasonicTestingForms.Forms
         }
         private void ThicknessGaugeInit(AppConfigController configController, XMLMaterialsController materialsController)
         {
-            string nameMaterialPEC = configController.GetStrValue("materialPEC");
+            nameMaterialPEC = configController.GetStrValue("materialPEC");
             Material materialPEC = materialsController.GetMaterial(nameMaterialPEC);
 
             double radiusPEC = configController.GetDoubleValue("radiusPEC");
@@ -55,15 +58,14 @@ namespace UltrasonicTestingForms.Forms
             AcousticWave acousticWave = new AcousticWave(amplitude, frequency);
             RoundPEC roundPEC = new RoundPEC(radiusPEC, materialPEC, acousticWave);
 
-            string namematerialTO = configController.GetStrValue("materialTO");
-            Material materialTO = materialsController.GetMaterial(namematerialTO);
+            nameMaterialTO = configController.GetStrValue("materialTO");
+            Material materialTO = materialsController.GetMaterial(nameMaterialTO);
 
             double thicknessTO = configController.GetDoubleValue("thicknessTO");
             TestObject testObject = new TestObject(materialTO, thicknessTO);
             this.thicknessGauge = new UltrasonicThicknessGauge(roundPEC, testObject);
             this.thicknessGauge.StartTesting();
         }
-
         private void timerAction_Tick(object sender, EventArgs e)
         {
             if (thicknessGauge.Chart.Length > index)
@@ -95,22 +97,52 @@ namespace UltrasonicTestingForms.Forms
 
             return bmp;
         }
-        private string templatePath = @"Templates\ThicknessGaugeFraunhofer.docx";
-        MSWordController wordController;
-        Bitmap img;
         private void btnPrint_Click(object sender, EventArgs e)
         {
+            if (thicknessGauge is null)
+            {
+                MessageBox.Show("Запустите моделирование");
+                return;
+            }
+            if (timerAction.Enabled)
+            {
+                MessageBox.Show("Дождитесь окончания моделирования");
+                return;
+            }
             using (wordController = new MSWordController(templatePath))
             {
-                wordController.Replace(Properties.Resources.RadiusPEC, (thicknessGauge.Converter as RoundPEC).Radius.ToString());
+                var _converter = thicknessGauge.Converter as RoundPEC;
+                var _acousticWave = _converter.AcousticWave;
+                var _testObject = thicknessGauge.TestObject;
+                var _wavelength = _acousticWave.CalcWavelength(_testObject.Material).ToString();
+                var _attenuation = thicknessGauge.Attenuation;
+
+                wordController.Replace(Resources.RadiusPEC, _converter.Radius.ToString());
+                wordController.Replace(Resources.WaveAmplitude, _acousticWave.Amplitude.ToString());
+                wordController.Replace(Resources.Frequency, _acousticWave.Frequency.ToString());
+                wordController.Replace(Resources.ThicknessTO, _testObject.Thickness.ToString());
+                wordController.Replace(Resources.MaterialPEC, nameMaterialPEC);
+                wordController.Replace(Resources.SpeedOfSoundPEC, _converter.Material.SpeedOfSound.ToString());
+                wordController.Replace(Resources.DensityPEC, _converter.Material.Density.ToString());
+                wordController.Replace(Resources.AcousticImpedancePEC, _converter.Material.AcousticImpedance.ToString());
+                wordController.Replace(Resources.MaterialTO, nameMaterialTO);
+                wordController.Replace(Resources.SpeedOfSoundTO, _testObject.Material.SpeedOfSound.ToString());
+                wordController.Replace(Resources.DensityTO, _testObject.Material.Density.ToString());
+                wordController.Replace(Resources.FsplTO, _testObject.Material.FSPL.ToString());
+                wordController.Replace(Resources.AcousticImpedanceTO, _testObject.Material.AcousticImpedance.ToString());
+                wordController.Replace(Resources.Wavelength, _wavelength);
+                wordController.Replace(Resources.FresnelDistance, _converter.FresnelDistance.ToString());
+                wordController.Replace(Resources.FraunhoferDistance, _converter.FraunhoferDistance.ToString());
+                wordController.Replace(Resources.AreaPEC, _converter.Area.ToString());
+                wordController.Replace(Resources.IntensityTransmittance, _attenuation.IntensityTransmittance.ToString());
+                wordController.Replace(Resources.AcousticAttenuation, _attenuation.Сalculate().ToString());
+                wordController.Replace(Resources.InAmplitude, thicknessGauge.ResponseAmplitude.ToString());
+
                 img = GetControlScreenshot(this.ContentPanel);
                 wordController.AddImage(img);
                 wordController.DocxSave();
             }
             MessageBox.Show("Отчет сохранен");
-
-
         }
-
     }
 }

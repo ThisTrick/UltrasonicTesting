@@ -3,9 +3,9 @@ using UltrasonicTesting.Models;
 
 namespace UltrasonicTesting.Attenuation
 {
-    public sealed class AttenuationFraunhoferPlane : AcousticAttenuation, IAcousticAttenuationСalculate
+    public sealed class AttenuationFraunhoferPlane : AcousticAttenuation
     {
-        public double Сalculate()
+        public override double Сalculate()
         {
             double wavelengthTO = Converter.AcousticWave.CalcWavelength(TestObject.Material);
             double exp = Math.Exp(-2 * TestObject.Thickness * TestObject.Material.FSPL);

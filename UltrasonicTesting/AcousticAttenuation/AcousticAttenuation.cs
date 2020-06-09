@@ -44,5 +44,6 @@ namespace UltrasonicTesting.Attenuation
             double intensityTransmittance = (4 * mult) / Math.Pow(sum, 2);
             return intensityTransmittance;
         }
+        public abstract double Сalculate();
     }
 }
