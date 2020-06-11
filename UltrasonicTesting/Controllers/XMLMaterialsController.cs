@@ -3,41 +3,40 @@ using System.Linq;
 using System.Xml.Linq;
 using UltrasonicTesting.Models;
 
-namespace UltrasonicTestingForms.Controllers
+namespace UltrasonicTesting.Controllers
 {
+    /// <summary>
+    /// Класс для управления XML базой данных характеристик материалов.
+    /// </summary>
     public class XMLMaterialsController
     {
-        private const string Path = "MaterialsBD.xml";
+        private readonly string Path;
         private XDocument XMLDocument;
-        private XElement Root;
-        public XMLMaterialsController()
+        private XElement RootElement;
+        public XMLMaterialsController(string path)
         {
+            Path = path;
             XMLDocument = XDocument.Load(Path);
-            Root = XMLDocument.Root;
+            RootElement = XMLDocument.Root;
         }
         /// <summary>
         /// Записывает акустические характеристики материала в XML базу данных.
         /// </summary>
         /// <param name="material">Материал</param>
         /// <param name="name">Название материала</param>
-        public void SetMaterial(Material material, string name)
+        public void SetMaterial(Material material)
         {
             if (material is null)
             {
                 throw new ArgumentNullException(nameof(material));
             }
 
-            if (string.IsNullOrEmpty(name))
-            {
-                throw new ArgumentException("Не может быть пустым", nameof(name));
-            }
-
-            XAttribute nameAttribute = new XAttribute("Name", name);
+            XAttribute nameAttribute = new XAttribute("Name", material.Name);
             XElement speedElement = new XElement("SpeedOfSound", material.SpeedOfSound);
             XElement densityElement = new XElement("Density", material.Density);
             XElement FSPLElement = new XElement("FSPL", material.FSPL);
             XElement materialElement = new XElement("Material", nameAttribute, speedElement, densityElement, FSPLElement);
-            Root.Add(materialElement);
+            RootElement.Add(materialElement);
             XMLDocument.Save(Path);
         }
         /// <summary>
@@ -51,7 +50,7 @@ namespace UltrasonicTestingForms.Controllers
             {
                 throw new ArgumentException("Не может быть пустым", nameof(name));
             }
-            var element = Root.Elements().Where(e => e.Attribute("Name").Value == name).First();
+            var element = RootElement.Elements().Where(e => e.Attribute("Name").Value == name).First();
             if (element is null)
             {
                 throw new ArgumentException($"Материала под именем [{name}] нет.");
@@ -63,11 +62,15 @@ namespace UltrasonicTestingForms.Controllers
             double.TryParse(strSpeedOfSound, out double speedOfSound);
             double.TryParse(strDensity, out double density);
             double.TryParse(strFSPL, out double fspl);
-            return new Material(speedOfSound, density, fspl);
+            return new Material(name, speedOfSound, density, fspl);
         }
+        /// <summary>
+        /// Извлекает все названия материалов из XML файла.
+        /// </summary>
+        /// <returns>Названия материалов.</returns>
         public object[] GetNameMaterials()
         {
-            return Root.Elements().Select(e => e.Attribute("Name").Value).ToArray<object>();
+            return RootElement.Elements().Select(e => e.Attribute("Name").Value).ToArray<object>();
         }
     }
 }

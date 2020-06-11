@@ -21,20 +21,44 @@
         }
         "Entry"
         {
-        "MsmKey" = "8:_776845C2AB0EC89B897AB41CBFCF7616"
-        "OwnerKey" = "8:_AB2109E9C0ED430D854176B0CDE0DCD4"
+        "MsmKey" = "8:_425BF31489634ADDB7602D295178D4B1"
+        "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
-        "MsmKey" = "8:_AB2109E9C0ED430D854176B0CDE0DCD4"
+        "MsmKey" = "8:_776845C2AB0EC89B897AB41CBFCF7616"
+        "OwnerKey" = "8:_FD6E180C4F0B486FA238CD8DF5B88E6F"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_89F0DBAA829E427D9439267548847839"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_8D5FB59F38564A58AB665A199B93EFEA"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_C2365D6AFADB47609DCBDD9479CE1FBF"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
         "MsmKey" = "8:_C8663D61E27524E929FB382D1E799A45"
-        "OwnerKey" = "8:_AB2109E9C0ED430D854176B0CDE0DCD4"
+        "OwnerKey" = "8:_FD6E180C4F0B486FA238CD8DF5B88E6F"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_FD6E180C4F0B486FA238CD8DF5B88E6F"
+        "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -46,7 +70,7 @@
         "Entry"
         {
         "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_AB2109E9C0ED430D854176B0CDE0DCD4"
+        "OwnerKey" = "8:_FD6E180C4F0B486FA238CD8DF5B88E6F"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -73,6 +97,22 @@
         "PrivateKeyFile" = "8:"
         "TimeStampServer" = "8:"
         "InstallerBootstrapper" = "3:2"
+            "BootstrapperCfg:{63ACBE69-63AA-4F98-B2B6-99F9E24495F2}"
+            {
+            "Enabled" = "11:TRUE"
+            "PromptEnabled" = "11:TRUE"
+            "PrerequisitesLocation" = "2:1"
+            "Url" = "8:"
+            "ComponentsUrl" = "8:"
+                "Items"
+                {
+                    "{EDC2488A-8267-493A-A98E-7D9C3B36CDF3}:.NETFramework,Version=v4.7.2"
+                    {
+                    "Name" = "8:Microsoft .NET Framework 4.7.2 (x86 and x64)"
+                    "ProductCode" = "8:.NETFramework,Version=v4.7.2"
+                    }
+                }
+            }
         }
         "Release"
         {
@@ -89,6 +129,22 @@
         "PrivateKeyFile" = "8:"
         "TimeStampServer" = "8:"
         "InstallerBootstrapper" = "3:2"
+            "BootstrapperCfg:{63ACBE69-63AA-4F98-B2B6-99F9E24495F2}"
+            {
+            "Enabled" = "11:TRUE"
+            "PromptEnabled" = "11:TRUE"
+            "PrerequisitesLocation" = "2:1"
+            "Url" = "8:"
+            "ComponentsUrl" = "8:"
+                "Items"
+                {
+                    "{EDC2488A-8267-493A-A98E-7D9C3B36CDF3}:.NETFramework,Version=v4.7.2"
+                    {
+                    "Name" = "8:Microsoft .NET Framework 4.7.2 (x86 and x64)"
+                    "ProductCode" = "8:.NETFramework,Version=v4.7.2"
+                    }
+                }
+            }
         }
     }
     "Deployable"
@@ -138,6 +194,26 @@
             "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_425BF31489634ADDB7602D295178D4B1"
+            {
+            "SourcePath" = "8:..\\UltrasonicTestingForms\\bin\\Release\\Templates\\ThicknessGaugeFresnel.docx"
+            "TargetName" = "8:ThicknessGaugeFresnel.docx"
+            "Tag" = "8:"
+            "Folder" = "8:_8489902189CF4C43B6FFDECF177C2E59"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
             "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_776845C2AB0EC89B897AB41CBFCF7616"
             {
             "AssemblyRegister" = "3:1"
@@ -167,6 +243,66 @@
             "Register" = "3:1"
             "Exclude" = "11:FALSE"
             "IsDependency" = "11:TRUE"
+            "IsolateTo" = "8:"
+            }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_89F0DBAA829E427D9439267548847839"
+            {
+            "SourcePath" = "8:..\\UltrasonicTestingForms\\bin\\Release\\Templates\\ThicknessGaugeFraunhofer.docx"
+            "TargetName" = "8:ThicknessGaugeFraunhofer.docx"
+            "Tag" = "8:"
+            "Folder" = "8:_8489902189CF4C43B6FFDECF177C2E59"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_8D5FB59F38564A58AB665A199B93EFEA"
+            {
+            "SourcePath" = "8:C:\\Users\\Денис\\Desktop\\tmp\\Images\\Icon\\IconProject.png"
+            "TargetName" = "8:IconProject.png"
+            "Tag" = "8:"
+            "Folder" = "8:_9FEC95EA74A442409495C659F382F046"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_C2365D6AFADB47609DCBDD9479CE1FBF"
+            {
+            "SourcePath" = "8:..\\UltrasonicTestingForms\\bin\\Release\\MaterialsBD.xml"
+            "TargetName" = "8:MaterialsBD.xml"
+            "Tag" = "8:"
+            "Folder" = "8:_CFF6109D46CD403F98E82B166ADE8B8C"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
             "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_C8663D61E27524E929FB382D1E799A45"
@@ -227,6 +363,28 @@
             "Property" = "8:TARGETDIR"
                 "Folders"
                 {
+                    "{9EF0B969-E518-4E46-987F-47570745A589}:_8489902189CF4C43B6FFDECF177C2E59"
+                    {
+                    "Name" = "8:Templates"
+                    "AlwaysCreate" = "11:FALSE"
+                    "Condition" = "8:"
+                    "Transitive" = "11:FALSE"
+                    "Property" = "8:_2FDFBDB7D9E44790AA477702B4EB0192"
+                        "Folders"
+                        {
+                        }
+                    }
+                    "{9EF0B969-E518-4E46-987F-47570745A589}:_9FEC95EA74A442409495C659F382F046"
+                    {
+                    "Name" = "8:Images"
+                    "AlwaysCreate" = "11:FALSE"
+                    "Condition" = "8:"
+                    "Transitive" = "11:FALSE"
+                    "Property" = "8:_A30316D7F3854C79B3FBF9FDE2606841"
+                        "Folders"
+                        {
+                        }
+                    }
                 }
             }
             "{1525181F-901A-416C-8A58-119130FE478E}:_D9C8132C8ACA499F97698C40523DB66E"
@@ -257,7 +415,7 @@
         "Name" = "8:Microsoft Visual Studio"
         "ProductName" = "8:Ultrasonic Testing"
         "ProductCode" = "8:{94C79758-2236-49B9-A5EE-637F3506E4AB}"
-        "PackageCode" = "8:{B9C9EC26-E1DE-4BB0-94E2-C4DC36CDDCDA}"
+        "PackageCode" = "8:{7BC2724C-CE32-48B5-AE31-FA7516B2E8BC}"
         "UpgradeCode" = "8:{F8E6D8F8-0DA4-41FB-B44A-852E028CFB07}"
         "AspNetVersion" = "8:4.0.30319.0"
         "RestartWWWService" = "11:FALSE"
@@ -377,7 +535,7 @@
         }
         "Shortcut"
         {
-            "{970C0BB2-C7D0-45D7-ABFA-7EC378858BC0}:_1A0D59588F8C468E9E2E19888E25BB52"
+            "{970C0BB2-C7D0-45D7-ABFA-7EC378858BC0}:_5D46866743054A2D98F59869446842AA"
             {
             "Name" = "8:Ultrasonic Testing"
             "Arguments" = "8:"
@@ -385,13 +543,13 @@
             "ShowCmd" = "3:1"
             "IconIndex" = "3:0"
             "Transitive" = "11:FALSE"
-            "Target" = "8:_AB2109E9C0ED430D854176B0CDE0DCD4"
-            "Folder" = "8:_D9C8132C8ACA499F97698C40523DB66E"
+            "Target" = "8:_FD6E180C4F0B486FA238CD8DF5B88E6F"
+            "Folder" = "8:_13BAEC792EBD4BAAAC2DB61A1E5DDC4B"
             "WorkingFolder" = "8:_CFF6109D46CD403F98E82B166ADE8B8C"
             "Icon" = "8:_2B8C578D9FBB416E8BA08E78B0A2004C"
             "Feature" = "8:"
             }
-            "{970C0BB2-C7D0-45D7-ABFA-7EC378858BC0}:_E0BE78A1BB8E4BA2AC9C5A5127046163"
+            "{970C0BB2-C7D0-45D7-ABFA-7EC378858BC0}:_AF4EC1A19FE04636B7DBFB3F5D276D30"
             {
             "Name" = "8:Ultrasonic Testing"
             "Arguments" = "8:"
@@ -399,8 +557,8 @@
             "ShowCmd" = "3:1"
             "IconIndex" = "3:0"
             "Transitive" = "11:FALSE"
-            "Target" = "8:_AB2109E9C0ED430D854176B0CDE0DCD4"
-            "Folder" = "8:_13BAEC792EBD4BAAAC2DB61A1E5DDC4B"
+            "Target" = "8:_FD6E180C4F0B486FA238CD8DF5B88E6F"
+            "Folder" = "8:_D9C8132C8ACA499F97698C40523DB66E"
             "WorkingFolder" = "8:_CFF6109D46CD403F98E82B166ADE8B8C"
             "Icon" = "8:_2B8C578D9FBB416E8BA08E78B0A2004C"
             "Feature" = "8:"
@@ -804,7 +962,7 @@
         }
         "ProjectOutput"
         {
-            "{5259A561-127C-4D43-A0A1-72F10C7B3BF8}:_AB2109E9C0ED430D854176B0CDE0DCD4"
+            "{5259A561-127C-4D43-A0A1-72F10C7B3BF8}:_FD6E180C4F0B486FA238CD8DF5B88E6F"
             {
             "SourcePath" = "8:..\\UltrasonicTestingForms\\obj\\Release\\UltrasonicTestingForms.exe"
             "TargetName" = "8:"

@@ -1,10 +1,14 @@
 ﻿using System;
 using System.Drawing;
+using System.IO;
 using System.Windows.Forms;
 using Word = Microsoft.Office.Interop.Word;
 
-namespace UltrasonicTestingForms.Controllers
+namespace UltrasonicTesting.Controllers
 {
+    /// <summary>
+    /// Класс для создания отчета моделирования в файле docx.
+    /// </summary>
     public class MSWordController : IDisposable
     {
         private Word.Application App;
@@ -13,21 +17,35 @@ namespace UltrasonicTestingForms.Controllers
         private Object Missing;
         private Object WdReplace;
         private Object Wrap;
+        FileInfo AppFile;
+        /// <summary>
+        /// Основной конструктор.
+        /// </summary>
+        /// <param name="pathTemplate">Короткий путь к шаблону отчета. 
+        /// Файл должен находится в одной директории с исполняемым файлом или наследнике.</param>
         public MSWordController(string pathTemplate)
         {
             App = new Word.Application();
-            System.IO.FileInfo file = new System.IO.FileInfo(Application.ExecutablePath);
-            string absolutePath = System.IO.Path.Combine(file.Directory.FullName, pathTemplate);
+            AppFile = new FileInfo(Application.ExecutablePath);
+            string absolutePath = Path.Combine(AppFile.DirectoryName, pathTemplate);
             Docx = App.Application.Documents.Add(absolutePath);
             Missing = Type.Missing;
             Find = App.Selection.Find;
             Wrap = Word.WdFindWrap.wdFindContinue;
             WdReplace = Word.WdReplace.wdReplaceAll;
         }
+        /// <summary>
+        /// Сохраняет созданный файл docx.
+        /// </summary>
         public void DocxSave()
         {
             Docx.Save();
         }
+        /// <summary>
+        /// Заменяет текст на заданный.
+        /// </summary>
+        /// <param name="findText">Текст который нужно заменить.</param>
+        /// <param name="newText">Текст на который будет заменен.</param>
         public void Replace(string findText, string newText)
         {
             Find.Text = findText;
@@ -44,13 +62,17 @@ namespace UltrasonicTestingForms.Controllers
                 ReplaceWith: Missing,
                 Replace: WdReplace);
         }
-
+        /// <summary>
+        /// Добавляет в конец файла docx изображение.
+        /// Изображение временно добавляется в папку Images наследника директории исполняемого файла. 
+        /// </summary>
+        /// <param name="img">Изображение.</param>
         public void AddImage(Bitmap img)
         {
             string pathImg = @"Images\tmp.png";
-            img.Save(pathImg);
-            System.IO.FileInfo file = new System.IO.FileInfo(Application.ExecutablePath);
-            string absolutePath = System.IO.Path.Combine(file.Directory.FullName, pathImg);
+            string absolutePath = Path.Combine(AppFile.DirectoryName, pathImg);
+            img.Save(absolutePath);
+
             // Перемещение курсора в конец файла
             Word.Range Range = Docx.Range(0, Docx.Content.End);
             object dir = Word.WdCollapseDirection.wdCollapseEnd;
@@ -59,11 +81,13 @@ namespace UltrasonicTestingForms.Controllers
             // Вставка рисунка 
             Docx.Application.Selection.InlineShapes.AddPicture(absolutePath);
         }
-
         #region IDisposable
         private bool disposed = false;
 
         // реализация интерфейса IDisposable.
+        /// <summary>
+        /// Нужен для корректной зачистки ресурсов. 
+        /// </summary>
         public void Dispose()
         {
             Dispose(true);
@@ -91,6 +115,5 @@ namespace UltrasonicTestingForms.Controllers
             Dispose(false);
         }
         #endregion
-
     }
 }

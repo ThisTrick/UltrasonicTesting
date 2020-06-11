@@ -1,23 +1,21 @@
 ﻿using System;
 using System.ComponentModel;
 using System.Windows.Forms;
-using UltrasonicTestingForms.Controllers;
+using UltrasonicTesting.Controllers;
 
 namespace UltrasonicTestingForms.Forms
 {
     public partial class FormParams : Form
     {
         private AppConfigController configController;
+        XMLMaterialsController materialsController;
         public FormParams()
         {
             InitializeComponent();
             configController = new AppConfigController();
-            XMLMaterialsController materialsController = new XMLMaterialsController();
-            var names = materialsController.GetNameMaterials();
-            cmbMaterialPEC.Items.Clear();
-            cmbMaterialTO.Items.Clear();
-            cmbMaterialPEC.Items.AddRange(names);
-            cmbMaterialTO.Items.AddRange(names);
+            var path = "MaterialsBD.xml";
+            materialsController = new XMLMaterialsController(path);
+            UpdateNames(cmbMaterialTO, cmbMaterialPEC);
         }
         private void btnPush_Click(object sender, EventArgs e)
         {
@@ -53,6 +51,11 @@ namespace UltrasonicTestingForms.Forms
                 errorProvider.SetError(cmbMaterialPEC, message);
                 return;
             }
+            WriteToXML();
+        }
+
+        private void WriteToXML()
+        {
             configController.SetValue("amplitude", txtAmplitude.Text);
             configController.SetValue("frequency", txtFrequency.Text);
             configController.SetValue("radiusPEC", txtRadius.Text);
@@ -62,6 +65,15 @@ namespace UltrasonicTestingForms.Forms
             MessageBox.Show("Данные записаны");
         }
 
+        private void UpdateNames(params ComboBox[] comboBoxes)
+        {
+            var _names = materialsController.GetNameMaterials();
+            foreach(var comboBox in comboBoxes)
+            {
+                comboBox.Items.Clear();
+                comboBox.Items.AddRange(_names);
+            }
+        }
         private void ValidatingDouble(object sender, CancelEventArgs e)
         {
             errorProvider.Clear();
@@ -84,9 +96,7 @@ namespace UltrasonicTestingForms.Forms
         {
             Form formAddMaterial = new FormAddMaterial();
             formAddMaterial.ShowDialog();
-            var nameMaterial = formAddMaterial.Text;
-            cmbMaterialPEC.Items.Add(nameMaterial);
-            cmbMaterialTO.Items.Add(nameMaterial);
+            UpdateNames(cmbMaterialTO, cmbMaterialPEC);
         }
     }
 }

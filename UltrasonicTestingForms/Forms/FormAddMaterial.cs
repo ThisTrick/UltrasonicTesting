@@ -1,25 +1,26 @@
 ﻿using System;
 using System.ComponentModel;
 using System.Windows.Forms;
+using UltrasonicTesting.Controllers;
 using UltrasonicTesting.Models;
-using UltrasonicTestingForms.Controllers;
 
 namespace UltrasonicTestingForms.Forms
 {
     public partial class FormAddMaterial : Form
     {
-        public string NameMaterial;
+        private XMLMaterialsController materialsController;
         public FormAddMaterial()
         {
             InitializeComponent();
-            XMLMaterialsController materialsController = new XMLMaterialsController();
-            var names = materialsController.GetNameMaterials();
+            var path = "MaterialsBD.xml";
+            materialsController = new XMLMaterialsController(path);
         }
 
         private void bPush_Click(object sender, EventArgs e)
         {
             errorProvider.Clear();
             string message = "Поле не может быть пустым";
+
             if (string.IsNullOrEmpty(txtName.Text))
             {
                 errorProvider.SetError(txtName, message);
@@ -44,11 +45,11 @@ namespace UltrasonicTestingForms.Forms
             double.TryParse(txtSpeedOfSound.Text, out double speedOfSound);
             double.TryParse(txtDensity.Text, out double density);
             double.TryParse(txtFSPL.Text, out double fspl);
-            var material = new Material(speedOfSound, density, fspl);
-            var materialsController = new XMLMaterialsController();
-            materialsController.SetMaterial(material, txtName.Text);
+
+            var material = new Material(txtName.Text, speedOfSound, density, fspl);
+
+            materialsController.SetMaterial(material);
             MessageBox.Show("Материал добавлен.");
-            this.Text = txtName.Text;
             this.Close();
         }
         private void ValidatingDouble(object sender, CancelEventArgs e)

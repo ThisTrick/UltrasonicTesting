@@ -8,6 +8,10 @@ namespace UltrasonicTesting.Models
     public class Material
     {
         /// <summary>
+        /// Имя материала.
+        /// </summary>
+        public string Name { get; private set; }
+        /// <summary>
         /// Скорость распространения звука в материале. Размерность [м/с].
         /// </summary>
         public double SpeedOfSound { get; private set; }
@@ -23,8 +27,12 @@ namespace UltrasonicTesting.Models
         /// Пространственный коэффициент затухания. Размерность [Нп/м].
         /// </summary>
         public double FSPL { get; set; }
-        public Material(double speedOfSound, double density, double fspl)
+        public Material(string name, double speedOfSound, double density, double fspl)
         {
+            if (string.IsNullOrEmpty(name))
+            {
+                throw new ArgumentException("message", nameof(name));
+            }
             if (speedOfSound <= 0)
             {
                 throw new ArgumentOutOfRangeException(nameof(speedOfSound), speedOfSound, "Должен быть больше нуля.");
@@ -37,6 +45,7 @@ namespace UltrasonicTesting.Models
             {
                 throw new ArgumentOutOfRangeException(nameof(fspl), fspl, "Должен быть больше нуля.");
             }
+            Name = name;
             SpeedOfSound = speedOfSound;
             Density = density;
             FSPL = fspl;

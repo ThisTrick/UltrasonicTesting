@@ -17,15 +17,10 @@ namespace UltrasonicTesting
         /// Объект Контроля.
         /// </summary>
         public TestObject TestObject { get; private set; }
-        /// <summary>
-        /// Рассчитанная толщина Объекта Контроля.
-        /// </summary>
-        public double Result { get; private set; }
         public double ResponseTime { get; private set; }
         public double ResponseAmplitude { get; private set; }
         public double[] Chart { get; private set; }
         public bool IsFresnelZone { get; private set; }
-        private int _responseTimeInt;
         public AcousticAttenuation Attenuation { get; private set; }
         public UltrasonicThicknessGauge(PiezoelectricityConverter converter, TestObject testObject)
         {
@@ -46,13 +41,13 @@ namespace UltrasonicTesting
         public void StartTesting()
         {
             ResponseTime = ResponseTimeCalc();
-            _responseTimeInt = (int)Math.Round(ResponseTime * 1000000);
-            var samplesGraphics = _responseTimeInt + 1;
-            Chart = new double[samplesGraphics];
             Attenuation = ChoiceAcousticAttenuation();
             ResponseAmplitude = ResponseAmplitudeCalc();
+
+            var _responseTimeInt = (int)Math.Round(ResponseTime * 1000000);
+            var samplesGraphics = _responseTimeInt + 1;
+            Chart = new double[samplesGraphics];
             InitChart(ResponseAmplitude);
-            Result = ResponseTime / 2 * TestObject.Material.SpeedOfSound;
         }
         /// <summary>
         /// Выбор конкретного коэффициента затухания акустического тракта.
