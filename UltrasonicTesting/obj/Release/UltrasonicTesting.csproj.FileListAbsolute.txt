@@ -3,4 +3,3 @@ D:\GitHub\UltrasonicTesting\UltrasonicTesting\bin\Release\UltrasonicTesting.pdb
 D:\GitHub\UltrasonicTesting\UltrasonicTesting\obj\Release\UltrasonicTesting.dll
 D:\GitHub\UltrasonicTesting\UltrasonicTesting\obj\Release\UltrasonicTesting.pdb
 D:\GitHub\UltrasonicTesting\UltrasonicTesting\obj\Release\UltrasonicTesting.csproj.ResolveComReference.cache
-D:\GitHub\UltrasonicTesting\UltrasonicTesting\obj\Release\UltrasonicTesting.csprojAssemblyReference.cache

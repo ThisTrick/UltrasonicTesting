@@ -15,13 +15,25 @@
     {
         "Entry"
         {
-        "MsmKey" = "8:_2B8C578D9FBB416E8BA08E78B0A2004C"
+        "MsmKey" = "8:_01628E2F9F814FB790C7687B4FD1FA87"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
-        "MsmKey" = "8:_425BF31489634ADDB7602D295178D4B1"
+        "MsmKey" = "8:_0BA5590D30944E0182266DDCC5870A08"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_147417BF0A2B484981034973BFA069D8"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_2B8C578D9FBB416E8BA08E78B0A2004C"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
@@ -33,12 +45,6 @@
         }
         "Entry"
         {
-        "MsmKey" = "8:_89F0DBAA829E427D9439267548847839"
-        "OwnerKey" = "8:_UNDEFINED"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
         "MsmKey" = "8:_8D5FB59F38564A58AB665A199B93EFEA"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
@@ -46,6 +52,12 @@
         "Entry"
         {
         "MsmKey" = "8:_C2365D6AFADB47609DCBDD9479CE1FBF"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_C38E5E4EAD6746D49C755510FBD4DBF3"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
@@ -64,12 +76,6 @@
         "Entry"
         {
         "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_776845C2AB0EC89B897AB41CBFCF7616"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_UNDEFINED"
         "OwnerKey" = "8:_FD6E180C4F0B486FA238CD8DF5B88E6F"
         "MsmSig" = "8:_UNDEFINED"
         }
@@ -77,6 +83,12 @@
         {
         "MsmKey" = "8:_UNDEFINED"
         "OwnerKey" = "8:_C8663D61E27524E929FB382D1E799A45"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_UNDEFINED"
+        "OwnerKey" = "8:_776845C2AB0EC89B897AB41CBFCF7616"
         "MsmSig" = "8:_UNDEFINED"
         }
     }
@@ -174,12 +186,12 @@
         }
         "File"
         {
-            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_2B8C578D9FBB416E8BA08E78B0A2004C"
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_01628E2F9F814FB790C7687B4FD1FA87"
             {
-            "SourcePath" = "8:..\\UltrasonicTestingForms\\Resources\\IconProject.ico"
-            "TargetName" = "8:IconProject.ico"
+            "SourcePath" = "8:..\\UltrasonicTestingForms\\bin\\Release\\Templates\\ThicknessGaugeFresnelEN.docx"
+            "TargetName" = "8:ThicknessGaugeFresnelEN.docx"
             "Tag" = "8:"
-            "Folder" = "8:_CFF6109D46CD403F98E82B166ADE8B8C"
+            "Folder" = "8:_8489902189CF4C43B6FFDECF177C2E59"
             "Condition" = "8:"
             "Transitive" = "11:FALSE"
             "Vital" = "11:TRUE"
@@ -194,12 +206,52 @@
             "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
-            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_425BF31489634ADDB7602D295178D4B1"
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_0BA5590D30944E0182266DDCC5870A08"
             {
-            "SourcePath" = "8:..\\UltrasonicTestingForms\\bin\\Release\\Templates\\ThicknessGaugeFresnel.docx"
-            "TargetName" = "8:ThicknessGaugeFresnel.docx"
+            "SourcePath" = "8:..\\UltrasonicTestingForms\\bin\\Release\\Templates\\ThicknessGaugeFresnelRU.docx"
+            "TargetName" = "8:ThicknessGaugeFresnelRU.docx"
             "Tag" = "8:"
             "Folder" = "8:_8489902189CF4C43B6FFDECF177C2E59"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_147417BF0A2B484981034973BFA069D8"
+            {
+            "SourcePath" = "8:..\\UltrasonicTestingForms\\bin\\Release\\Templates\\ThicknessGaugeFraunhoferEN.docx"
+            "TargetName" = "8:ThicknessGaugeFraunhoferEN.docx"
+            "Tag" = "8:"
+            "Folder" = "8:_8489902189CF4C43B6FFDECF177C2E59"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_2B8C578D9FBB416E8BA08E78B0A2004C"
+            {
+            "SourcePath" = "8:..\\UltrasonicTestingForms\\Resources\\IconProject.ico"
+            "TargetName" = "8:IconProject.ico"
+            "Tag" = "8:"
+            "Folder" = "8:_CFF6109D46CD403F98E82B166ADE8B8C"
             "Condition" = "8:"
             "Transitive" = "11:FALSE"
             "Vital" = "11:TRUE"
@@ -245,26 +297,6 @@
             "IsDependency" = "11:TRUE"
             "IsolateTo" = "8:"
             }
-            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_89F0DBAA829E427D9439267548847839"
-            {
-            "SourcePath" = "8:..\\UltrasonicTestingForms\\bin\\Release\\Templates\\ThicknessGaugeFraunhofer.docx"
-            "TargetName" = "8:ThicknessGaugeFraunhofer.docx"
-            "Tag" = "8:"
-            "Folder" = "8:_8489902189CF4C43B6FFDECF177C2E59"
-            "Condition" = "8:"
-            "Transitive" = "11:FALSE"
-            "Vital" = "11:TRUE"
-            "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:FALSE"
-            "System" = "11:FALSE"
-            "Permanent" = "11:FALSE"
-            "SharedLegacy" = "11:FALSE"
-            "PackageAs" = "3:1"
-            "Register" = "3:1"
-            "Exclude" = "11:FALSE"
-            "IsDependency" = "11:FALSE"
-            "IsolateTo" = "8:"
-            }
             "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_8D5FB59F38564A58AB665A199B93EFEA"
             {
             "SourcePath" = "8:C:\\Users\\Денис\\Desktop\\tmp\\Images\\Icon\\IconProject.png"
@@ -291,6 +323,26 @@
             "TargetName" = "8:MaterialsBD.xml"
             "Tag" = "8:"
             "Folder" = "8:_CFF6109D46CD403F98E82B166ADE8B8C"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_C38E5E4EAD6746D49C755510FBD4DBF3"
+            {
+            "SourcePath" = "8:..\\UltrasonicTestingForms\\bin\\Release\\Templates\\ThicknessGaugeFraunhoferRU.docx"
+            "TargetName" = "8:ThicknessGaugeFraunhoferRU.docx"
+            "Tag" = "8:"
+            "Folder" = "8:_8489902189CF4C43B6FFDECF177C2E59"
             "Condition" = "8:"
             "Transitive" = "11:FALSE"
             "Vital" = "11:TRUE"
@@ -576,7 +628,7 @@
                     "{688940B3-5CA9-4162-8DEE-2993FA9D8CBC}:_11A394B513A9429EB40DA88041CD7BF1"
                     {
                     "Sequence" = "3:100"
-                    "DisplayName" = "8:Finished"
+                    "DisplayName" = "8:Готово"
                     "UseDynamicProperties" = "11:TRUE"
                     "IsDependency" = "11:FALSE"
                     "SourcePath" = "8:<VsdDialogDir>\\VsdAdminFinishedDlg.wid"
@@ -613,7 +665,7 @@
                     "{688940B3-5CA9-4162-8DEE-2993FA9D8CBC}:_0F667AF1922D42D6AAB82E9B769779E0"
                     {
                     "Sequence" = "3:100"
-                    "DisplayName" = "8:Welcome"
+                    "DisplayName" = "8:Добро пожаловать!"
                     "UseDynamicProperties" = "11:TRUE"
                     "IsDependency" = "11:FALSE"
                     "SourcePath" = "8:<VsdDialogDir>\\VsdAdminWelcomeDlg.wid"
@@ -661,7 +713,7 @@
                     "{688940B3-5CA9-4162-8DEE-2993FA9D8CBC}:_7C40F6AA16C4461AA947F22818B83E32"
                     {
                     "Sequence" = "3:300"
-                    "DisplayName" = "8:Confirm Installation"
+                    "DisplayName" = "8:Подтверждение установки"
                     "UseDynamicProperties" = "11:TRUE"
                     "IsDependency" = "11:FALSE"
                     "SourcePath" = "8:<VsdDialogDir>\\VsdAdminConfirmDlg.wid"
@@ -683,7 +735,7 @@
                     "{688940B3-5CA9-4162-8DEE-2993FA9D8CBC}:_ACE04FA72CA346AAB8F5A67922B85F23"
                     {
                     "Sequence" = "3:200"
-                    "DisplayName" = "8:Installation Folder"
+                    "DisplayName" = "8:Папка установки"
                     "UseDynamicProperties" = "11:TRUE"
                     "IsDependency" = "11:FALSE"
                     "SourcePath" = "8:<VsdDialogDir>\\VsdAdminFolderDlg.wid"
@@ -714,7 +766,7 @@
                     "{688940B3-5CA9-4162-8DEE-2993FA9D8CBC}:_353BCD2119C8414BB86E480AD282CEA2"
                     {
                     "Sequence" = "3:100"
-                    "DisplayName" = "8:Finished"
+                    "DisplayName" = "8:Готово"
                     "UseDynamicProperties" = "11:TRUE"
                     "IsDependency" = "11:FALSE"
                     "SourcePath" = "8:<VsdDialogDir>\\VsdFinishedDlg.wid"
@@ -764,7 +816,7 @@
                     "{688940B3-5CA9-4162-8DEE-2993FA9D8CBC}:_52EAE6C15D534E9799A7C6019E04EFAE"
                     {
                     "Sequence" = "3:100"
-                    "DisplayName" = "8:Progress"
+                    "DisplayName" = "8:Ход выполнения"
                     "UseDynamicProperties" = "11:TRUE"
                     "IsDependency" = "11:FALSE"
                     "SourcePath" = "8:<VsdDialogDir>\\VsdAdminProgressDlg.wid"
@@ -808,7 +860,7 @@
                     "{688940B3-5CA9-4162-8DEE-2993FA9D8CBC}:_AD0F8937DA5E4D61B51C57337AB2C7D8"
                     {
                     "Sequence" = "3:100"
-                    "DisplayName" = "8:Progress"
+                    "DisplayName" = "8:Ход выполнения"
                     "UseDynamicProperties" = "11:TRUE"
                     "IsDependency" = "11:FALSE"
                     "SourcePath" = "8:<VsdDialogDir>\\VsdProgressDlg.wid"
@@ -852,7 +904,7 @@
                     "{688940B3-5CA9-4162-8DEE-2993FA9D8CBC}:_4A7E1C7B7E19498E8F1CDB873D73B05B"
                     {
                     "Sequence" = "3:300"
-                    "DisplayName" = "8:Confirm Installation"
+                    "DisplayName" = "8:Подтверждение установки"
                     "UseDynamicProperties" = "11:TRUE"
                     "IsDependency" = "11:FALSE"
                     "SourcePath" = "8:<VsdDialogDir>\\VsdConfirmDlg.wid"
@@ -874,7 +926,7 @@
                     "{688940B3-5CA9-4162-8DEE-2993FA9D8CBC}:_712D0A58C8084715B67F95CC669432B8"
                     {
                     "Sequence" = "3:200"
-                    "DisplayName" = "8:Installation Folder"
+                    "DisplayName" = "8:Папка установки"
                     "UseDynamicProperties" = "11:TRUE"
                     "IsDependency" = "11:FALSE"
                     "SourcePath" = "8:<VsdDialogDir>\\VsdFolderDlg.wid"
@@ -909,7 +961,7 @@
                     "{688940B3-5CA9-4162-8DEE-2993FA9D8CBC}:_C1BDCB5543A84A3C87A9CD3A4CDBF7A4"
                     {
                     "Sequence" = "3:100"
-                    "DisplayName" = "8:Welcome"
+                    "DisplayName" = "8:Добро пожаловать!"
                     "UseDynamicProperties" = "11:TRUE"
                     "IsDependency" = "11:FALSE"
                     "SourcePath" = "8:<VsdDialogDir>\\VsdWelcomeDlg.wid"
