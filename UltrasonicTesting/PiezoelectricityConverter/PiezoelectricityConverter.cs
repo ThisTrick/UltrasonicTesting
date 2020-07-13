@@ -16,14 +16,6 @@ namespace UltrasonicTesting
         /// </summary>
         public abstract double Area { get; }
         /// <summary>
-        /// Длинна Ближней зоны(зона Френеля). Размерность [м].
-        /// </summary>
-        public abstract double FresnelDistance { get; }
-        /// <summary>
-        /// Длинна Дальней зоны(зона Фраунгофера). Размерность [м].
-        /// </summary>
-        public abstract double FraunhoferDistance { get; }
-        /// <summary>
         /// Материал ПЕП
         /// </summary>
         public Material Material { get; private set; }
@@ -37,5 +29,13 @@ namespace UltrasonicTesting
             Material = materialPEC ?? throw new System.ArgumentNullException(nameof(materialPEC));
             AcousticWave = acousticWave ?? throw new System.ArgumentNullException(nameof(acousticWave));
         }
+        /// <summary>
+        /// Расчет длинны Ближней зоны(зона Френеля). Размерность [м].
+        /// </summary>
+        public abstract double CalcFresnelDistance(Material testObjectMaterial);
+        /// <summary>
+        /// Расчет длинны Дальней зоны(зона Фраунгофера). Размерность [м].
+        /// </summary>
+        public abstract double CalcFraunhoferDistance(Material testObjectMaterial);
     }
 }

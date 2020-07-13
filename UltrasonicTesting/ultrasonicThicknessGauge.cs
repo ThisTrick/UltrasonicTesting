@@ -57,8 +57,8 @@ namespace UltrasonicTesting
         {
             AcousticAttenuation acousticAttenuation;
             var thickness = TestObject.Thickness;
-            var fresnelDistance = Converter.FresnelDistance;
-            var fraunhoferDistance = Converter.FraunhoferDistance;
+            var fresnelDistance = Converter.CalcFresnelDistance(TestObject.Material);
+            var fraunhoferDistance = Converter.CalcFraunhoferDistance(TestObject.Material);
             if (thickness <= fresnelDistance)
             {
                 acousticAttenuation = new AttenuationFresnelPlane(Converter, TestObject);

@@ -153,8 +153,8 @@ namespace UltrasonicTestingForms.Forms
             wordController.Replace(Resources.FsplTO, _testObject.Material.FSPL.ToString());
             wordController.Replace(Resources.AcousticImpedanceTO, _testObject.Material.AcousticImpedance.ToString());
             wordController.Replace(Resources.Wavelength, _wavelength);
-            wordController.Replace(Resources.FresnelDistance, _converter.FresnelDistance.ToString());
-            wordController.Replace(Resources.FraunhoferDistance, _converter.FraunhoferDistance.ToString());
+            wordController.Replace(Resources.FresnelDistance, _converter.CalcFresnelDistance(_testObject.Material).ToString());
+            wordController.Replace(Resources.FraunhoferDistance, _converter.CalcFraunhoferDistance(_testObject.Material).ToString());
             wordController.Replace(Resources.AreaPEC, _converter.Area.ToString());
             wordController.Replace(Resources.IntensityTransmittance, _attenuation.IntensityTransmittance.ToString());
             wordController.Replace(Resources.AcousticAttenuation, _attenuation.Сalculate().ToString());
