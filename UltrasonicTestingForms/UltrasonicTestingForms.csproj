@@ -159,6 +159,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="IconProject.ico" />
+    <None Include="Resources\github.png" />
   </ItemGroup>
   <ItemGroup>
     <COMReference Include="Microsoft.Office.Core">
