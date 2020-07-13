@@ -31,7 +31,6 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormMain));
             this.panelMenu = new System.Windows.Forms.Panel();
             this.btnInfo = new System.Windows.Forms.Button();
-            this.btnAddMaterial = new System.Windows.Forms.Button();
             this.btnResult = new System.Windows.Forms.Button();
             this.btnParams = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
@@ -50,7 +49,6 @@
             // 
             this.panelMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(76)))));
             this.panelMenu.Controls.Add(this.btnInfo);
-            this.panelMenu.Controls.Add(this.btnAddMaterial);
             this.panelMenu.Controls.Add(this.btnResult);
             this.panelMenu.Controls.Add(this.btnParams);
             this.panelMenu.Controls.Add(this.panel1);
@@ -66,16 +64,6 @@
             this.btnInfo.Name = "btnInfo";
             this.btnInfo.UseVisualStyleBackColor = true;
             this.btnInfo.Click += new System.EventHandler(this.btnInfo_Click);
-            // 
-            // btnAddMaterial
-            // 
-            resources.ApplyResources(this.btnAddMaterial, "btnAddMaterial");
-            this.btnAddMaterial.FlatAppearance.BorderSize = 0;
-            this.btnAddMaterial.ForeColor = System.Drawing.Color.Gainsboro;
-            this.btnAddMaterial.Image = global::UltrasonicTestingForms.Properties.Resources.icon_file_white;
-            this.btnAddMaterial.Name = "btnAddMaterial";
-            this.btnAddMaterial.UseVisualStyleBackColor = true;
-            this.btnAddMaterial.Click += new System.EventHandler(this.btnAddMaterial_Click);
             // 
             // btnResult
             // 
@@ -160,7 +148,6 @@
         private System.Windows.Forms.Label MenuTitle;
         private System.Windows.Forms.Button btnParams;
         private System.Windows.Forms.Button btnInfo;
-        private System.Windows.Forms.Button btnAddMaterial;
         private System.Windows.Forms.Button btnResult;
         private System.Windows.Forms.Panel MainPanel;
         private System.Windows.Forms.Panel DesktopPanel;

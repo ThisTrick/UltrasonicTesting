@@ -44,7 +44,9 @@
             this.btnPush = new System.Windows.Forms.Button();
             this.errorProvider = new System.Windows.Forms.ErrorProvider(this.components);
             this.bAddMaterial = new System.Windows.Forms.Button();
+            this.panel1 = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider)).BeginInit();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // txtRadius
@@ -67,9 +69,9 @@
             this.lbRadius.ForeColor = System.Drawing.Color.Black;
             this.lbRadius.Location = new System.Drawing.Point(67, 30);
             this.lbRadius.Name = "lbRadius";
-            this.lbRadius.Size = new System.Drawing.Size(211, 41);
+            this.lbRadius.Size = new System.Drawing.Size(174, 41);
             this.lbRadius.TabIndex = 1;
-            this.lbRadius.Text = "Радиус ПЕП:";
+            this.lbRadius.Text = "PEC radius:";
             // 
             // label1
             // 
@@ -78,9 +80,9 @@
             this.label1.ForeColor = System.Drawing.Color.Black;
             this.label1.Location = new System.Drawing.Point(67, 79);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(200, 41);
+            this.label1.Size = new System.Drawing.Size(176, 41);
             this.label1.TabIndex = 3;
-            this.label1.Text = "Амплитуда:";
+            this.label1.Text = "Amplitude:";
             // 
             // txtAmplitude
             // 
@@ -102,9 +104,9 @@
             this.label2.ForeColor = System.Drawing.Color.Black;
             this.label2.Location = new System.Drawing.Point(67, 128);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(151, 41);
+            this.label2.Size = new System.Drawing.Size(171, 41);
             this.label2.TabIndex = 5;
-            this.label2.Text = "Частота:";
+            this.label2.Text = "Frequency:";
             // 
             // txtFrequency
             // 
@@ -126,9 +128,9 @@
             this.label3.ForeColor = System.Drawing.Color.Black;
             this.label3.Location = new System.Drawing.Point(67, 177);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(213, 41);
+            this.label3.Size = new System.Drawing.Size(204, 41);
             this.label3.TabIndex = 7;
-            this.label3.Text = "Толщина ОК:";
+            this.label3.Text = "TO thickness:";
             // 
             // txtThickness
             // 
@@ -170,9 +172,9 @@
             this.label4.ForeColor = System.Drawing.Color.Black;
             this.label4.Location = new System.Drawing.Point(67, 256);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(230, 41);
+            this.label4.Size = new System.Drawing.Size(191, 41);
             this.label4.TabIndex = 9;
-            this.label4.Text = "Материал ОК:";
+            this.label4.Text = "TO material:";
             // 
             // label5
             // 
@@ -181,9 +183,9 @@
             this.label5.ForeColor = System.Drawing.Color.Black;
             this.label5.Location = new System.Drawing.Point(67, 307);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(252, 41);
+            this.label5.Size = new System.Drawing.Size(204, 41);
             this.label5.TabIndex = 11;
-            this.label5.Text = "Материал ПЕП:";
+            this.label5.Text = "PEC material:";
             // 
             // cmbMaterialPEC
             // 
@@ -207,12 +209,18 @@
             // 
             // btnPush
             // 
-            this.btnPush.Location = new System.Drawing.Point(96, 406);
+            this.btnPush.BackColor = System.Drawing.SystemColors.Highlight;
+            this.btnPush.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnPush.FlatAppearance.BorderSize = 0;
+            this.btnPush.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnPush.Font = new System.Drawing.Font("Nirmala UI", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnPush.ForeColor = System.Drawing.Color.White;
+            this.btnPush.Location = new System.Drawing.Point(0, 0);
             this.btnPush.Name = "btnPush";
-            this.btnPush.Size = new System.Drawing.Size(150, 33);
+            this.btnPush.Size = new System.Drawing.Size(397, 76);
             this.btnPush.TabIndex = 12;
             this.btnPush.Text = "Push";
-            this.btnPush.UseVisualStyleBackColor = true;
+            this.btnPush.UseVisualStyleBackColor = false;
             this.btnPush.Click += new System.EventHandler(this.btnPush_Click);
             // 
             // errorProvider
@@ -221,13 +229,29 @@
             // 
             // bAddMaterial
             // 
-            this.bAddMaterial.Location = new System.Drawing.Point(392, 395);
+            this.bAddMaterial.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(150)))), ((int)(((byte)(136)))));
+            this.bAddMaterial.Dock = System.Windows.Forms.DockStyle.Right;
+            this.bAddMaterial.FlatAppearance.BorderSize = 0;
+            this.bAddMaterial.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.bAddMaterial.Font = new System.Drawing.Font("Nirmala UI", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bAddMaterial.ForeColor = System.Drawing.Color.White;
+            this.bAddMaterial.Location = new System.Drawing.Point(397, 0);
             this.bAddMaterial.Name = "bAddMaterial";
-            this.bAddMaterial.Size = new System.Drawing.Size(177, 44);
+            this.bAddMaterial.Size = new System.Drawing.Size(293, 76);
             this.bAddMaterial.TabIndex = 13;
             this.bAddMaterial.Text = "AddMaterial";
-            this.bAddMaterial.UseVisualStyleBackColor = true;
+            this.bAddMaterial.UseVisualStyleBackColor = false;
             this.bAddMaterial.Click += new System.EventHandler(this.bAddMaterial_Click);
+            // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.btnPush);
+            this.panel1.Controls.Add(this.bAddMaterial);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panel1.Location = new System.Drawing.Point(0, 375);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(690, 76);
+            this.panel1.TabIndex = 14;
             // 
             // FormParams
             // 
@@ -235,8 +259,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
             this.ClientSize = new System.Drawing.Size(690, 451);
-            this.Controls.Add(this.bAddMaterial);
-            this.Controls.Add(this.btnPush);
+            this.Controls.Add(this.panel1);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.cmbMaterialPEC);
             this.Controls.Add(this.label4);
@@ -252,6 +275,7 @@
             this.Name = "FormParams";
             this.Text = "FormParams";
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider)).EndInit();
+            this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -274,5 +298,6 @@
         private System.Windows.Forms.Button btnPush;
         internal System.Windows.Forms.ErrorProvider errorProvider;
         private System.Windows.Forms.Button bAddMaterial;
+        private System.Windows.Forms.Panel panel1;
     }
 }
