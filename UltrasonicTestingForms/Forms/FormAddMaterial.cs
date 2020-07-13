@@ -19,7 +19,7 @@ namespace UltrasonicTestingForms.Forms
         private void bPush_Click(object sender, EventArgs e)
         {
             errorProvider.Clear();
-            string message = "Поле не может быть пустым";
+            string message = "The field cannot be empty";
 
             if (string.IsNullOrEmpty(txtName.Text))
             {
@@ -49,7 +49,7 @@ namespace UltrasonicTestingForms.Forms
             var material = new Material(txtName.Text, speedOfSound, density, fspl);
 
             materialsController.SetMaterial(material);
-            MessageBox.Show("Материал добавлен.");
+            MessageBox.Show("Material added.");
             this.Close();
         }
         private void ValidatingDouble(object sender, CancelEventArgs e)
@@ -59,13 +59,13 @@ namespace UltrasonicTestingForms.Forms
             if (!double.TryParse(textBox.Text, out double result))
             {
                 e.Cancel = true;
-                errorProvider.SetError(textBox, "Пожалуйста, введите число!");
+                errorProvider.SetError(textBox, "Please enter a number!");
                 return;
             }
             if (result <= 0)
             {
                 e.Cancel = true;
-                errorProvider.SetError(textBox, "Пожалуйста, введите число  больше нуля!");
+                errorProvider.SetError(textBox, "Please enter a number greater than zero!");
                 return;
             }
         }

@@ -69,11 +69,11 @@ namespace UltrasonicTestingForms.Forms
 
             if (this.thicknessGauge.IsFresnelZone)
             {
-                templatePath = @"Templates\ThicknessGaugeFresnel.docx";
+                templatePath = @"Templates\ThicknessGaugeFresnel";
             }
             else
             {
-                templatePath = @"Templates\ThicknessGaugeFraunhofer.docx";
+                templatePath = @"Templates\ThicknessGaugeFraunhofer";
             }
 
             this.thicknessGauge.StartTesting();
@@ -99,13 +99,23 @@ namespace UltrasonicTestingForms.Forms
         {
             if (thicknessGauge is null)
             {
-                MessageBox.Show("Запустите моделирование");
+                MessageBox.Show("Run simulation");
                 return;
             }
             if (timerAction.Enabled)
             {
-                MessageBox.Show("Дождитесь окончания моделирования");
+                MessageBox.Show("Wait for the simulation to finish");
                 return;
+            }
+            DialogResult dialogResult = MessageBox.Show("To select EN, press YES. For RU, press NO.", "Language selection", 
+                                                        MessageBoxButtons.YesNo);
+            if (dialogResult == DialogResult.Yes)
+            {
+                templatePath += "EN.docx";
+            }
+            else if (dialogResult == DialogResult.No)
+            {
+                templatePath += "RU.docx";
             }
             try
             {
@@ -126,7 +136,7 @@ namespace UltrasonicTestingForms.Forms
             {
                 MessageBox.Show(ex.Message);
             }
-            MessageBox.Show("Отчет сохранен");
+            MessageBox.Show("Report saved");
         }
 
         private void WriteImgToDocx()

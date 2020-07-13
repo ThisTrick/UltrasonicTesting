@@ -20,7 +20,7 @@ namespace UltrasonicTestingForms.Forms
         private void btnPush_Click(object sender, EventArgs e)
         {
             errorProvider.Clear();
-            string message = "Пожалуйста, заполните поле!";
+            string message = "Please fill in the field!";
             if (string.IsNullOrEmpty(txtAmplitude.Text))
             {
                 errorProvider.SetError(txtAmplitude, message);
@@ -62,7 +62,7 @@ namespace UltrasonicTestingForms.Forms
             configController.SetValue("thicknessTO", txtThickness.Text);
             configController.SetValue("materialTO", cmbMaterialTO.SelectedItem as string);
             configController.SetValue("materialPEC", cmbMaterialPEC.SelectedItem as string);
-            MessageBox.Show("Данные записаны");
+            MessageBox.Show("Data recorded");
         }
 
         private void UpdateNames(params ComboBox[] comboBoxes)
@@ -81,13 +81,13 @@ namespace UltrasonicTestingForms.Forms
             if (!double.TryParse(textBox.Text, out double result))
             {
                 e.Cancel = true;
-                errorProvider.SetError(textBox, "Пожалуйста, введите число!");
+                errorProvider.SetError(textBox, "Please enter a number!");
                 return;
             }
             if (result <= 0)
             {
                 e.Cancel = true;
-                errorProvider.SetError(textBox, "Пожалуйста, введите число  больше нуля!");
+                errorProvider.SetError(textBox, "Please enter a number greater than zero!");
                 return;
             }
         }
