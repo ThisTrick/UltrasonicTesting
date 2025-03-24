@@ -11,7 +11,7 @@ namespace UltrasonicTesting_Tests
         [ExpectedException(typeof(ArgumentOutOfRangeException))]
         public void ArgumentOutOfRangeExceptionThicknessConstructor()
         {
-            new TestObject(new Material(23, 12, 23), 0);
+            new TestObject(new Material(string.Empty, 23, 12, 23), 0);
         }
         [TestMethod]
         [ExpectedException(typeof(ArgumentNullException))]

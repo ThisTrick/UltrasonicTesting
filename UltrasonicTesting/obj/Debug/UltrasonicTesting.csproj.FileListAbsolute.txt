@@ -1,4 +1,0 @@
-D:\GitHub\UltrasonicTesting\UltrasonicTesting\bin\Debug\UltrasonicTesting.dll
-D:\GitHub\UltrasonicTesting\UltrasonicTesting\bin\Debug\UltrasonicTesting.pdb
-D:\GitHub\UltrasonicTesting\UltrasonicTesting\obj\Debug\UltrasonicTesting.dll
-D:\GitHub\UltrasonicTesting\UltrasonicTesting\obj\Debug\UltrasonicTesting.pdb

@@ -17,7 +17,7 @@ namespace UltrasonicTesting_Tests
             double speedOfSound = 340;
             double density = 1.2;
             double fspl = 1.1;
-            Material materialPEC = new Material(speedOfSound, density, fspl);
+            Material materialPEC = new Material(string.Empty, speedOfSound, density, fspl);
 
             double amplitude = 15;
             double frequency = 4000;
@@ -29,7 +29,7 @@ namespace UltrasonicTesting_Tests
             double speedOfSound2 = 3000;
             double density2 = 1.2;
             double fspl2 = 1.1;
-            Material materialTO = new Material(speedOfSound2, density2, fspl2);
+            Material materialTO = new Material(string.Empty, speedOfSound2, density2, fspl2);
 
             TestObject testObject = new TestObject(materialTO, 0.2);
 
@@ -51,13 +51,13 @@ namespace UltrasonicTesting_Tests
         [ExpectedException(typeof(ArgumentNullException))]
         public void ArgumentNullExceptionPiezoelectricityConverterCtor()
         {
-            new AttenuationFresnelPlane(null, new TestObject(new Material(1, 1, 1), 1));
+            new AttenuationFresnelPlane(null, new TestObject(new Material(string.Empty, 1, 1, 1), 1));
         }
         [TestMethod]
         [ExpectedException(typeof(ArgumentNullException))]
         public void ArgumentNullExceptionTestObjectCtor()
         {
-            new AttenuationFresnelPlane(new RoundPEC(1, new Material(1, 1, 1), new AcousticWave(1, 1)), null);
+            new AttenuationFresnelPlane(new RoundPEC(1, new Material(string.Empty, 1, 1, 1), new AcousticWave(1, 1)), null);
         }
     }
 }

@@ -15,7 +15,7 @@ namespace UltrasonicTesting_Tests
             double speedOfSound = 340;
             double density = 1.2;
             double fspl = 1.1;
-            material = new Material(speedOfSound, density, fspl);
+            material = new Material(string.Empty, speedOfSound, density, fspl);
 
             double amplitude = 15;
             double frequency = 4000;

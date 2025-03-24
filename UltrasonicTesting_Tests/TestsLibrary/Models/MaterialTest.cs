@@ -14,7 +14,7 @@ namespace UltrasonicTesting_Tests
             double speedOfSound = 340;
             double density = 1.2;
             double fspl = 1.1;
-            Material matetial = new Material(speedOfSound, density, fspl);
+            Material matetial = new Material(string.Empty, speedOfSound, density, fspl);
 
 
             // act
@@ -29,19 +29,19 @@ namespace UltrasonicTesting_Tests
         [ExpectedException(typeof(ArgumentOutOfRangeException))]
         public void ArgumentOutOfRangeExceptionSpeedOfSoundConstructor()
         {
-            new Material(-1, 12, 12);
+            new Material(string.Empty, -1, 12, 12);
         }
         [TestMethod]
         [ExpectedException(typeof(ArgumentOutOfRangeException))]
         public void ArgumentOutOfRangeExceptionDensityConstructor()
         {
-            new Material(10, 0, 12);
+            new Material(string.Empty, 10, 0, 12);
         }
         [TestMethod]
         [ExpectedException(typeof(ArgumentOutOfRangeException))]
         public void ArgumentOutOfRangeExceptionFsplConstructor()
         {
-            new Material(10, 10, -1);
+            new Material(string.Empty, 10, 10, -1);
         }
 
     }

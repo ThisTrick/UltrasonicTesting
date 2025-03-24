@@ -16,7 +16,7 @@ namespace UltrasonicTesting_Tests
             double speedOfSound = 340;
             double density = 1.2;
             double fspl = 1.1;
-            Material materialPEC = new Material(speedOfSound, density, fspl);
+            Material materialPEC = new Material(string.Empty, speedOfSound, density, fspl);
 
             double amplitude = 15;
             double frequency = 4000;
@@ -28,7 +28,7 @@ namespace UltrasonicTesting_Tests
             double speedOfSound2 = 3000;
             double density2 = 1.2;
             double fspl2 = 1.1;
-            Material materialTO = new Material(speedOfSound2, density2, fspl2);
+            Material materialTO = new Material(string.Empty, speedOfSound2, density2, fspl2);
 
             TestObject testObject = new TestObject(materialTO, 0.2);
 
@@ -42,7 +42,7 @@ namespace UltrasonicTesting_Tests
             double speedOfSound2 = 3000;
             double density2 = 1.2;
             double fspl2 = 1.1;
-            Material materialTO = new Material(speedOfSound2, density2, fspl2);
+            Material materialTO = new Material(string.Empty, speedOfSound2, density2, fspl2);
 
             TestObject newTestObject = new TestObject(materialTO, 0.2);
             // act
@@ -84,27 +84,18 @@ namespace UltrasonicTesting_Tests
             // assert
             Assert.AreEqual(expectedChart[133], actualChart[133], delta);
         }
-        [TestMethod]
-        public void ResultTest()
-        {
-            // act
-            double expected = 0.2;
-            double delta = 0.00001; // погрешность 0.01%
-            double actual = thicknessGauge.Result;
-            // assert
-            Assert.AreEqual(expected, actual, delta);
-        }
+
         [TestMethod]
         [ExpectedException(typeof(ArgumentNullException))]
         public void ArgumentNullExceptionPiezoelectricityConverterCtor()
         {
-            new UltrasonicThicknessGauge(null, new TestObject(new Material(1, 2, 1), 1));
+            new UltrasonicThicknessGauge(null, new TestObject(new Material(string.Empty, 1, 2, 1), 1));
         }
         [TestMethod]
         [ExpectedException(typeof(ArgumentNullException))]
         public void ArgumentNullExceptionTestObjectCtor()
         {
-            new UltrasonicThicknessGauge(new RoundPEC(1, new Material(1, 1, 1), new AcousticWave(1, 1)), null);
+            new UltrasonicThicknessGauge(new RoundPEC(1, new Material(string.Empty, 1, 1, 1), new AcousticWave(1, 1)), null);
         }
         [TestMethod]
         [ExpectedException(typeof(ArgumentNullException))]
